@@ -39,7 +39,7 @@
 | `res/editions/` | 系列定义（含 `Granblue Fantasy.txt`） |
 | `res/lists/TypeLists.txt` | 注册了本系列自定义种族（Draph / Erune / Harvin / Primal等）的类型表 |
 | `res/blockdata/` | 轮抓/环境接入（已注册 `Granblue Fantasy` 系列） |
-| `res/pics/cards/GBF/` | GBF 卡图（Forge 不会自动下载自定义集卡图，随仓库分发） |
+| `res/gbf-pics/GBF/` | GBF 卡图（Forge 不会自动下载自定义集卡图，随仓库分发；刻意不放在 `res/pics/` 旧版数据目录下，以免触发 Forge 启动时的数据迁移弹窗） |
 | `forge-src/` | **魔改后的 Forge 引擎完整源码**（基于官方 tag `forge-2.0.13`，编译产物不入库） |
 | `tests/` | 无头解析/行为测试基建（Java，详见 `tests/README.md`） |
 | `tools/` | 一键回归 gate（`run_all_tests.cmd`）与反模式 lint（`lint_gbf.py`） |
@@ -101,7 +101,7 @@ mvn -pl forge-gui-desktop -am -DskipTests package
 
 Forge 不会自动下载自定义集（CUSTOM_SET）的卡图，需要手动放置：
 
-将本仓库 `res/pics/cards/GBF/` 整个文件夹复制到 Forge 的卡图缓存目录：
+将本仓库 `res/gbf-pics/GBF/` 整个文件夹复制到 Forge 的卡图缓存目录：
 
 ```
 Windows: %LOCALAPPDATA%\Forge\Cache\pics\cards\GBF\
