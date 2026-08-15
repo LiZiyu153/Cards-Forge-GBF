@@ -6,6 +6,26 @@
 __pycache__/
 /Uninstaller/
 
+# ==== 敏感信息兜底（防误提交密钥/凭据；2026-08-15 安全审计新增） ====
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+.env
+.env.*
+!.env.example
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.git-credentials
+.netrc
+.htpasswd
+secrets.*
+secret.*.json
+
 # ==== 本地小工具（不入库） ====
 /推送.cmd
 
