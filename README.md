@@ -3,8 +3,11 @@
 本项目是基于开源万智牌游戏引擎 **Card-Forge**（[github.com/Card-Forge/forge](https://github.com/Card-Forge/forge)，GPL-3.0 协议）的**自定义卡牌脚本项目**，为 Forge 游戏添加了一套完整的《碧蓝幻想》（Granblue Fantasy，代码 `GBF`）主题系列：包括卡牌脚本、衍生物脚本、系列定义与配套的测试/回归工具。
 
 > ⚠️ **重要**：本项目的卡牌脚本使用了**魔改后的 Forge 引擎 API**（见下方「引擎改动」），
-> **不能**用官方原版 Forge 引擎运行本系列卡牌（会报错）。本仓库已包含魔改引擎的完整源码（`forge-src/`），
-> 请按「安装」章节自行编译使用。
+> **不能**用官方原版 Forge 引擎运行本系列卡牌（会报错）。
+>
+> **想直接玩**：下载 [Releases](https://github.com/LiZiyu153/Cards-Forge-GBF/releases) 里的**便携版压缩包**，
+> 解压即玩，不需要编译、也不需要安装官方 Forge（见「快速开始」）。
+> **想自己编译**：本仓库包含魔改引擎完整源码（`forge-src/`），见「安装（从源码编译）」章节。
 
 本项目仍然在不断更新，欢迎游玩体验并给出建议。
 
@@ -54,7 +57,18 @@
 
 ## 使用方法
 
-### 安装
+### 快速开始（推荐：开箱即用）
+
+1. 到 [Releases 页面](https://github.com/LiZiyu153/Cards-Forge-GBF/releases) 下载最新的**便携版压缩包**（如 `Cards-Forge-GBF-Portable-v0.0.1.5.zip`）；
+2. 解压到任意目录（路径建议不含中文）；
+3. 双击运行压缩包内的 **`安装卡图.cmd`**（只需一次：把 GBF 卡图复制到 Forge 卡图缓存目录）；
+4. 双击 **`forge.cmd`** 启动游戏；
+5. 新建牌组/随便玩玩时选择系列 **Granblue Fantasy (GBF)**。
+
+> 需要 **Java 21 或更高版本**（没有的话去 [adoptium.net](https://adoptium.net) 下载安装）。
+> 便携版 = 官方安装基底 + 魔改引擎 jar + 全部卡牌脚本 + GBF 卡图，与当前开发环境完全一致。
+
+### 安装（从源码编译）
 
 #### 1. 编译魔改引擎
 
