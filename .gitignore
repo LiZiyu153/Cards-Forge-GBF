@@ -6,6 +6,9 @@
 __pycache__/
 /Uninstaller/
 
+# ==== 本地小工具（不入库） ====
+/推送.cmd
+
 # ==== 根目录：原项目安装器文件与 AGENT 工作记录（不入库） ====
 /CHANGES.txt
 /ISSUES.txt
