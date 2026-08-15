@@ -1,0 +1,13 @@
+Name:Love-crazed Flower Armor,Vira
+ManaCost:4 B B
+Types:Legendary Creature Human Berserker
+PT:3/3
+S:Mode$ MustTarget | ValidSA$ Spell.OppCtrl,Activated.OppCtrl | ValidTarget$ Card.Self | ValidZone$ Battlefield | CheckSVar$ HasOther | SVarCompare$ EQ0 | Description$ As long as you control no other creatures, all spells and abilities an opponent controls that can target CARDNAME must target CARDNAME.
+SVar:HasOther:Count$Valid Creature.Other+YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigDestroy | TriggerDescription$ When CARDNAME enters, destroy all other creatures you control, then destroy that many target creatures you don't control.
+SVar:TrigDestroy:DB$ DestroyAll | ValidCards$ Creature.Other+YouCtrl | RememberDestroyed$ True | SubAbility$ TrigImmediateTrig
+SVar:TrigImmediateTrig:DB$ ImmediateTrigger | ConditionDefined$ Remembered | ConditionPresent$ Card | ConditionCompare$ GE1 | RememberObjects$ Remembered | Execute$ DBDestroyOpp | SubAbility$ DBCleanup | TriggerDescription$ Then destroy that many target creatures you don't control.
+SVar:DBDestroyOpp:DB$ Destroy | ValidTgts$ Creature.OppCtrl | TgtPrompt$ Select that many target creatures you don't control | TargetMin$ 0 | TargetMax$ X | IsCurse$ True
+SVar:X:TriggerRemembered$Amount
+SVar:DBCleanup:DB$ Cleanup | ClearRemembered$ True
+Oracle:As long as you control no other creatures, all spells and abilities an opponent controls that can target Vira must target Vira.\nWhen Vira enters, destroy all other creatures you control, then destroy that many target creatures you don't control.

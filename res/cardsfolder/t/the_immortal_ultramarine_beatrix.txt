@@ -1,0 +1,10 @@
+Name:The Immortal Ultramarine,Beatrix
+ManaCost:2 B G
+Types:Legendary Creature Human Knight
+PT:4/2
+T:Mode$ Taps | ValidCard$ Card.Self | Execute$ TrigFight | TriggerDescription$ Whenever CARDNAME becomes tapped, it gains indestructible until end of turn, then fights target creature you don't control. If that creature dies, put a +1/+1 counter on CARDNAME.
+SVar:TrigFight:DB$ Pump | Defined$ Self | KW$ Indestructible | SubAbility$ DBFight
+SVar:DBFight:DB$ Fight | Defined$ Self | ValidTgts$ Creature.OppCtrl | SubAbility$ DBCheckDeath
+SVar:DBCheckDeath:DB$ PutCounter | Defined$ Self | CounterType$ P1P1 | CounterNum$ 1 | ConditionDefined$ Targeted | ConditionPresent$ Card.inZoneGraveyard
+DeckHas:Ability$Counters
+Oracle:Whenever Beatrix becomes tapped, it gains indestructible until end of turn, then fights target creature you don't control. If that creature dies, put a +1/+1 counter on Beatrix.

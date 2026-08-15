@@ -1,0 +1,18 @@
+Name:Holy Maiden,Jeanne d'Arc
+ManaCost:3 W
+Types:Legendary Creature Human Knight
+PT:2/3
+K:Flash
+K:Kicker:2
+T:Mode$ SpellCast | ValidCard$ Card | ValidActivatingPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigProtect | TriggerDescription$ Whenever you cast a spell, another target creature you control gains protection from all damage until end of turn.
+SVar:TrigProtect:DB$ Effect | ValidTgts$ Creature.Other+YouCtrl | ReplacementEffects$ RPreventAll | RememberObjects$ Targeted | Duration$ UntilEndOfTurn | SpellDescription$ Another target creature you control gains protection from all damage until end of turn.
+SVar:RPreventAll:Event$ DamageDone | Prevent$ True | ValidTarget$ Card.IsRemembered | Description$ Prevent all damage that would be dealt to that creature.
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigSearch | TriggerDescription$ When CARDNAME enters, search your library for a white Human creature card with mana value less than 4, reveal it, and put it into your hand, then shuffle. If CARDNAME was kicked, instead put it onto the battlefield, then exile it and return it to the battlefield with a +1/+1 counter on it, then shuffle.
+SVar:TrigSearch:DB$ Branch | BranchConditionSVar$ Kicked | BranchConditionSVarCompare$ GE1 | TrueSubAbility$ DBBlink | FalseSubAbility$ DBSearch
+SVar:DBBlink:DB$ ChangeZone | Origin$ Library | Destination$ Battlefield | ChangeType$ Creature.Human+White+cmcLT4 | RememberChanged$ True | Shuffle$ True | SubAbility$ DBExileReturn
+SVar:DBExileReturn:DB$ ChangeZone | Defined$ Remembered | Origin$ Battlefield | Destination$ Exile | SubAbility$ DBReturn
+SVar:DBReturn:DB$ ChangeZone | Defined$ Remembered | Origin$ Exile | Destination$ Battlefield | SubAbility$ DBPutCounter
+SVar:DBPutCounter:DB$ PutCounter | Defined$ Remembered | CounterType$ P1P1 | CounterNum$ 1
+SVar:DBSearch:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Creature.Human+White+cmcLT4 | Shuffle$ True
+SVar:Kicked:Count$Kicked.1.0
+Oracle:Flash, Kicker {2}\nWhenever you cast a spell, another target creature you control gains protection from all damage until end of turn.\nWhen Jeanne d'Arc enters, search your library for a white Human creature card with mana value less than 4, reveal it, and put it into your hand, then shuffle. If Jeanne d'Arc was kicked, instead put it onto the battlefield, then exile it and return it to the battlefield with a +1/+1 counter on it, then shuffle.

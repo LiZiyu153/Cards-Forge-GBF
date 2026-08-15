@@ -1,0 +1,8 @@
+Name:Pursuer of Myth
+ManaCost:1 U
+Types:Creature Human Wizard
+PT:1/3
+A:AB$ ChangeZone | Cost$ X T | Origin$ Graveyard | Destination$ Exile | ValidTgts$ Instant.YouCtrl+cmcEQX,Sorcery.YouCtrl+cmcEQX | TgtPrompt$ Choose target instant or sorcery card with mana value X from your graveyard | RememberChanged$ True | SubAbility$ DBPlot | SpellDescription$ Exile target instant or sorcery card with mana value X from your graveyard. It becomes plotted.
+SVar:DBPlot:DB$ AlterAttribute | Defined$ Remembered | Attributes$ Plotted
+SVar:X:Count$xPaid
+Oracle:{X}{T}: Exile target instant or sorcery card with mana value X from your graveyard. It becomes plotted.

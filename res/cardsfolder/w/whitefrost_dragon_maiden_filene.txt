@@ -1,0 +1,20 @@
+Name:Whitefrost Dragon Maiden,Filene
+ManaCost:3 R G
+Types:Legendary Creature Dragon
+PT:4/4
+K:Flying
+K:Kicker:4
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self+wasCast | CheckSVar$ Kicked | SVarCompare$ GE1 | Execute$ TrigKicked | TriggerDescription$ When CARDNAME enters, if you cast it and it was kicked, it deals 3 damage to each creature, gains haste, and create a Whitefrost artifact token.
+SVar:TrigKicked:DB$ DamageAll | ValidCards$ Creature | NumDmg$ 3 | SubAbility$ DBPumpHaste
+SVar:DBPumpHaste:DB$ Pump | Defined$ Self | KW$ Haste | SubAbility$ DBToken
+SVar:DBToken:DB$ Token | TokenScript$ whitefrost_artifact
+SVar:Kicked:Count$Kicked.1.0
+A:AB$ DamageAll | Cost$ T 3 | ValidCards$ Creature.!YouCtrl | NumDmg$ 3 | SpellDescription$ CARDNAME deals 3 damage to each creature you don't control.
+S:Mode$ Continuous | Affected$ Card.Self | CheckSVar$ HasWF | SVarCompare$ GE1 | AddKeyword$ Hexproof | Description$ As long as you control a Whitefrost artifact, CARDNAME has hexproof and deals double damage.
+S:Mode$ Continuous | Affected$ Card.Self | CheckSVar$ HasWF | SVarCompare$ GE1 | AddReplacementEffect$ DoubleDamageRE | Description$ If you control a Whitefrost artifact, damage dealt by CARDNAME is doubled.
+SVar:HasWF:Count$Valid Artifact.namedWhitefrost+YouCtrl
+SVar:DoubleDamageRE:Event$ DamageDone | ValidSource$ Card.Self | ReplaceWith$ DoubleDamage | Description$ Damage dealt by CARDNAME is doubled.
+SVar:DoubleDamage:DB$ ReplaceEffect | VarName$ DamageAmount | VarValue$ Y
+SVar:Y:ReplaceCount$DamageAmount/Twice
+DeckHas:Ability$Token|Counters
+Oracle:Flying, kicker {4}\nWhen Filene enters, if you cast it and it was kicked, it deals 3 damage to each creature, gains haste, and create a Whitefrost artifact token.\n{T}{3}: Filene deals 3 damage to each creature you don't control.\nAs long as you control a Whitefrost artifact, Filene has hexproof and deals double damage.

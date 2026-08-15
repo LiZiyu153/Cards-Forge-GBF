@@ -1,0 +1,9 @@
+Name:Shrewd Shooter
+ManaCost:G
+Types:Creature Erune Archer
+PT:1/2
+K:Reach
+T:Mode$ Blocks | ValidCard$ Card.Self | Execute$ TrigScry | TriggerDescription$ Whenever CARDNAME blocks or becomes blocked, scry 2.
+SVar:TrigScry:DB$ Scry | ScryNum$ 2
+T:Mode$ AttackerBlocked | ValidCard$ Card.Self | Execute$ TrigScry | Secondary$ True
+Oracle:Reach\nWhenever Shrewd Shooter blocks or becomes blocked, scry 2.

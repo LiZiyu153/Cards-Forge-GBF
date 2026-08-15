@@ -1,0 +1,154 @@
+[metadata]
+Code=GBF
+Name=Granblue Fantasy
+Date=2026-7-31
+Type=CUSTOM_SET
+Booster=10 Common, 3 Uncommon, 1 RareMythic
+BoosterBox=36
+
+[cards]
+#格式：收藏编号 稀有度（L基本地、C普通、U非普通、R稀有、M秘稀、S特殊） 卡名
+1 R Green Gunsmith, Cucouroux
+2 U Akua Lanakila
+3 U All Sensation
+4 C Arcane Swordswoman of Flame
+5 C Ars Magna
+6 R Awakened Dragoness,Grea
+7 R Azure Mercenary,Drang
+8 C Beastly Iron Ball
+9 U Bedrock Rain
+10 C Beguiling Indigo
+11 R Bewitching Rose of the Blue Sky,Rosetta
+12 C Big Bertha
+13 C Bitter Swordsman
+14 C Blazing Undertaker
+15 U Bloodline of a Ruined Kingdom
+16 M Blue-Green Magical Girl,Io
+17 U Burying Bullet
+18 U Celeste Claw Omega
+19 C Cielo della Grazia
+20 C Count of Integrity
+21 C Crosscut
+22 U Crystalia Conductor
+23 R Crystalian Mission,Lily
+24 R Dancer of the Sun,Anthuria
+25 U Death March
+26 C Die Drachenkanone
+27 C Diligent Holy Knight
+28 U Dissonant Desire
+29 C Double Tap
+30 C Dragon Knight
+31 R Dream Atlas
+32 C Dream Twins
+33 C Eagle Ruler of the Dawn
+34 U Empress of Gamblers
+35 C Erune Vagabond
+36 U Eternal Desire
+37 C Evil Eye
+38 C Eye of the Sparrow
+39 C Fist Flash Lightning
+40 C Flame Arts
+41 C Flare
+42 C Fleur Tourbillon
+43 U Fluttering Swordswoman,Narmaya
+44 C Foolish
+45 C Forest Ranger
+46 U Founder Alchemist,Cagliostro
+47 U Girl Fallen from the Sky
+48 C Goblin Killer
+49 U Good Man Seeking Vengeance,Sevilbarra
+50 C Grand Guignol
+51 U Growing Under the Sun
+52 U Guardian Knight of the Blue Sky,Katalina
+53 R Guardian of the Wind,Tiamat
+54 U Guiding Firearm
+55 M Hadean Watchdog,Cerberus
+56 C Heaven-Sent Child of the Wind and Waves
+57 C Heavens on Misery
+58 R Holy Maiden,Jeanne d'Arc
+59 C Imminent Shadow
+60 C It's Springtime!
+61 R Judgment of Thunder
+62 C Kingly Aura
+63 U Le Jardin de Fleurs
+64 U Leviathan Gaze Omega
+65 R Love-crazed Flower Armor,Vira
+66 R Loyalist of Awakened Blue,Eugen
+67 R Luminox Genesi
+68 U Maid Aflame
+69 U Maid of Iron Fists
+70 C Moon Between the Clouds
+71 U Natural-Born Archer,Metera
+72 U Navigator of the Blue Skies,Rackam
+73 C Nightmare Wish
+74 C O Katalina
+75 M Oracle Prodigy,Arulumaya
+76 U Perpetual Tailwind
+77 C Pilgrim on a Short Break
+78 U Priestess of the Sun
+79 U Princess of Seven Gems,De La Fille
+80 C Private Chiller
+81 U Psycho's Path
+82 C Pursuer of Myth
+83 C Quelling Dance of Flame
+84 C Returnee from the Moon
+85 U Sacred Arc
+86 C Sacred Archer
+87 R Sage of the Sword,Aletheia
+88 C Sand Wall
+89 C Serene Sinker
+90 C Shrewd Shooter
+91 U Skydrover
+92 C Snowdrop
+93 R Soothing Minstrel,Arriet
+94 C Southern Cross
+95 C Space Out
+96 C Spear of Arvess
+97 U Stargaze
+98 C Summer Memories
+99 C Sunrise Blade
+100 C Sword Song Dancer
+101 C Talismancer of Vengence
+102 R The Immortal Ultramarine,Beatrix
+103 M The Mad Cyclon,Grimnir
+104 U Thousand-Year Seeker,Yuel
+105 R Thunderswift Lord,Albert
+106 U Thunderwolf of Shattered Ground,Eustace
+107 U Tiamat Bolt Omega
+108 M Ultima Dagger
+109 M Unchanging Protector and Punisher,Shiva
+110 C Unforgettable Summer
+111 C Untergang Rune
+112 R Vampire Princess,Vania
+113 C Veteran of Crushing Fists
+114 C Violet Shadow Assassin
+115 U War Mecha
+116 C Warrior of Virtue
+117 C White Lightning
+118 M Whitefrost Dragon Maiden,Filene
+119 C Wind's Solace
+120 R Wings Shall Deliver You
+121 R Chromatic Paintbrush
+122 U Ebony Scythe
+123 R Self-Centered Flautist
+124 R Anila,Guardian of the South-Southwest
+125 R Andira,Guardian of the West-Southwest
+126 R Mahira,Guardian of the West
+127 R Vajra,Guardian of the West-Northwest
+128 R Kumbhira,Guardian of the North-Northwest
+129 R Vikala,Guardian of the North
+130 R Catura,Guardian of the North-Northeast
+131 R Bai,Jinx of the Tiger
+132 R Huang,Tiger's Prosperity
+133 R Makura,Guardian of the East
+134 R Payila,Guardian of the East-Southeast
+135 R Indala,Guardian of the South-Southeast
+136 M Sandira,Guardian of the South
+
+[tokens]
+#1 b_1_1_bird_flying 表示它是一张黑色 1/1 的飞行鸟
+1 c_0_0_a_construct_flying_artifactcount
+2 b_1_1_dog_ally_lifelink_deathtouch
+3 b_1_2_dog_ally_lifelink
+4 rg_2_1_boar
+5 b_0_1_rat

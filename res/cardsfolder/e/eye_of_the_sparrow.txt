@@ -1,0 +1,9 @@
+Name:Eye of the Sparrow
+ManaCost:U
+Types:Instant
+K:Spree
+A:SP$ Charm | Choices$ DBYours,DBAny | MinCharmNum$ 1 | CharmNum$ 1 | SpellDescription$ Return target creature to its owner's hand. If it's not yours, this spell costs {3} more to cast.
+SVar:DBYours:DB$ ChangeZone | ValidTgts$ Creature.YouCtrl | Origin$ Battlefield | Destination$ Hand | SubAbility$ DBDraw | SpellDescription$ Return target creature you control to its owner's hand.
+SVar:DBAny:DB$ ChangeZone | ModeCost$ 3 | ValidTgts$ Creature | Origin$ Battlefield | Destination$ Hand | SubAbility$ DBDraw | SpellDescription$ Return target creature to its owner's hand.
+SVar:DBDraw:DB$ Draw
+Oracle:Return target creature to its owner's hand. If that creature's controller isn't you, this spell costs {3} more to cast.\nDraw a card.

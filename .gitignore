@@ -1,0 +1,59 @@
+# ==== 二进制 / 构建产物 / 安装器 ====
+*.jar
+*.exe
+*.class
+*.pyc
+__pycache__/
+Uninstaller/
+
+# ==== 根目录：原项目安装器文件与 AGENT 工作记录（不入库） ====
+CHANGES.txt
+ISSUES.txt
+INSTALLATION.txt
+build.txt
+.installationinformation
+AGENTS.md
+session-log.md
+verification-todo.md
+forge*.cmd
+forge*.sh
+forge*.command
+forge-adventure.*
+adventure-editor.*
+forge.profile.properties.example
+docs/
+
+# ==== res/ 下只跟踪本项目产出 ====
+res/*
+!res/cardsfolder/
+!res/tokenscripts/
+!res/editions/
+!res/lists/
+!res/blockdata/
+
+# cardsfolder：只跟踪我们写的 *.txt，官方脚本 zip 不入库
+res/cardsfolder/*.zip
+
+# tokenscripts：只跟踪 GBF 系列引用的 5 个衍生物脚本
+res/tokenscripts/*
+!res/tokenscripts/c_0_0_a_construct_flying_artifactcount.txt
+!res/tokenscripts/b_1_1_dog_ally_lifelink_deathtouch.txt
+!res/tokenscripts/b_1_2_dog_ally_lifelink.txt
+!res/tokenscripts/rg_2_1_boar.txt
+!res/tokenscripts/b_0_1_rat.txt
+
+# editions：只跟踪 GBF 系列定义
+res/editions/*
+!res/editions/Granblue Fantasy.txt
+
+# lists：只跟踪我们改过的类型表
+res/lists/*
+!res/lists/TypeLists.txt
+
+# blockdata：只跟踪加入 GBF 注册的 2 个文件
+res/blockdata/*
+!res/blockdata/blocks.txt
+!res/blockdata/fantasyblocks.txt
+
+# custom-cards：设计稿（本地设计输入，不入库）
+res/custom-cards/

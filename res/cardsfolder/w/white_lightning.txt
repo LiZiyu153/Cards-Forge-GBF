@@ -1,0 +1,6 @@
+Name:White Lightning
+ManaCost:3 U
+Types:Enchantment
+S:Mode$ Continuous | Affected$ Island.YouCtrl | AddAbility$ LandAnim | Description$ Islands you control have "{U}: Until end of turn, this land becomes a 2/2 Human Rogue creature. It's still a land."
+SVar:LandAnim:AB$ Animate | Cost$ U | Defined$ Self | Power$ 2 | Toughness$ 2 | Types$ Human,Rogue,Creature,Land | SpellDescription$ {U}: Until end of turn, this land becomes a 2/2 Human Rogue creature. It's still a land.
+Oracle:Islands you control have "{U}: Until end of turn, this land becomes a 2/2 Human Rogue creature. It's still a land."

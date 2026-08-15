@@ -1,0 +1,6 @@
+Name:Boar Token
+ManaCost:no cost
+Colors:red,green
+Types:Creature Boar
+PT:2/1
+Oracle:

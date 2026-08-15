@@ -1,0 +1,10 @@
+Name:Kingly Aura
+ManaCost:2 W R
+Types:Enchantment Saga
+K:Chapter:3:DBI,DBII,DBIII
+SVar:DBI:DB$ Token | TokenAmount$ 1 | TokenScript$ r_2_2_ideal_vassals_vigilance_human | SpellDescription$ I — Create an Ideal Vassals token, a 2/2 red Human creature with vigilance.
+SVar:DBII:DB$ Draw | Defined$ You | SpellDescription$ II — Draw a card.
+SVar:DBIII:DB$ PumpAll | ValidCards$ Creature.Human+Red+YouCtrl | NumAtt$ 2 | SubAbility$ DBAddColor | SpellDescription$ III — Red Humans you control get +2/+0 and are white in addition to their other colors.
+SVar:DBAddColor:DB$ AnimateAll | ValidCards$ Creature.Human+Red+YouCtrl | Colors$ White
+DeckHas:Ability$Token
+Oracle:(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Create an Ideal Vassals token, a 2/2 red Human creature with vigilance.\nII — Draw a card.\nIII — Red Humans you control get +2/+0 and are white in addition to their other colors.

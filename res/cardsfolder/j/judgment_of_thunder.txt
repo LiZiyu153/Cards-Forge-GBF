@@ -1,0 +1,10 @@
+Name:Judgment of Thunder
+ManaCost:2 W R
+Types:Instant
+A:SP$ DealDamage | ValidTgts$ Player | NumDmg$ 3 | NoPrevention$ True | SubAbility$ DBDamageCreatures
+SVar:DBDamageCreatures:DB$ DamageAll | ValidTgts$ Player | ValidCards$ Creature.!Human | NumDmg$ 3 | NoPrevention$ True | RememberDamaged$ True | SubAbility$ DBLoseAbilities
+SVar:DBLoseAbilities:DB$ Effect | StaticAbilities$ LoseAbilities | RememberObjects$ Remembered | SubAbility$ DBCantCast
+SVar:LoseAbilities:Mode$ Continuous | Affected$ Creature.IsRemembered | RemoveAllAbilities$ True | Description$ Creatures dealt damage this way lose all abilities until end of turn.
+SVar:DBCantCast:DB$ Effect | StaticAbilities$ CantCast | RememberObjects$ Targeted | Description$ That player can't cast noncreature spells until end of turn.
+SVar:CantCast:Mode$ CantBeCast | ValidCard$ Card.nonCreature | Caster$ Player.IsRemembered | Description$ That player can't cast noncreature spells until end of turn.
+Oracle:Judgment of Thunder deals 3 damage to target player and 3 damage to each non-Human creature that player controls. This damage can't be prevented. Creatures dealt damage this way lose all abilities until end of turn. That player can't cast noncreature spells until end of turn.

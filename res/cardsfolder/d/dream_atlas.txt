@@ -1,0 +1,11 @@
+Name:Dream Atlas
+ManaCost:X
+Types:Artifact
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self+wasCast | Execute$ TrigExile | TriggerDescription$ When CARDNAME enters, if you cast it, exile the top X cards of your library face down under it. You may look at them.
+SVar:TrigExile:DB$ Dig | DigNum$ X | DestinationZone$ Exile | ChangeNum$ All | ExileFaceDown$ True | WithMayLook$ True | RememberChanged$ True
+R:Event$ Draw | ActiveZones$ Battlefield | ValidPlayer$ You | ActivePhases$ Draw | ReplaceWith$ TrigChoose | Description$ At the beginning of your draw step, instead choose one —\n• Put one of the exiled cards into your hand.\n• Destroy CARDNAME.
+SVar:TrigChoose:DB$ GenericChoice | Defined$ You | ChoicePrompt$ Choose one — | Choices$ DBDrawExiled,DBDestroyAtlas
+SVar:DBDrawExiled:DB$ ChangeZone | Origin$ Exile | Destination$ Hand | ChangeType$ Card.ExiledWithSource | ChangeNum$ 1 | Chooser$ You | Hidden$ True | SpellDescription$ Put one of the exiled cards into your hand
+SVar:DBDestroyAtlas:DB$ Destroy | Defined$ Self | SpellDescription$ Destroy CARDNAME
+SVar:X:Count$xPaid
+Oracle:When Dream Atlas enters, if you cast it, exile the top X cards of your library face down under Dream Atlas. You may look at those cards.\nAt the beginning of your draw step, instead choose one —\n• Put one of the exiled cards into your hand.\n• Destroy Dream Atlas.

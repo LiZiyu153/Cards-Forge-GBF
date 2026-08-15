@@ -1,0 +1,17 @@
+Name:Eternal Desire
+ManaCost:1 B W
+Types:Enchantment
+K:Kicker:1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigExile | TriggerDescription$ When CARDNAME enters, exile target creature an opponent controls until CARDNAME leaves the battlefield. If CARDNAME was kicked, search that player's graveyard, hand and library for up to three cards with the same name as that creature and exile them.
+SVar:TrigExile:DB$ ChangeZone | ValidTgts$ Creature.OppCtrl | TgtPrompt$ Select target creature an opponent controls | Origin$ Battlefield | Destination$ Exile | RememberChanged$ True | SubAbility$ DBKickedBranch
+SVar:DBKickedBranch:DB$ Branch | BranchConditionSVar$ KickedSVar | BranchConditionSVarCompare$ EQ1 | TrueSubAbility$ DBSearchYard
+SVar:KickedSVar:Count$Kicked.1.0
+SVar:DBSearchYard:DB$ ChangeZone | ChangeType$ Remembered.sameName | Origin$ Graveyard | Destination$ Exile | DefinedPlayer$ TargetedController | Chooser$ You | ChangeNum$ 3 | Hidden$ True | RememberChanged$ True | Imprint$ True | SubAbility$ DBSearchHand | StackDescription$ None
+SVar:DBSearchHand:DB$ ChangeZone | ChangeType$ Remembered.sameName | Origin$ Hand | Destination$ Exile | DefinedPlayer$ TargetedController | Chooser$ You | ChangeNum$ 3 | Imprint$ True | SubAbility$ DBSearchLib | StackDescription$ None
+SVar:DBSearchLib:DB$ ChangeZone | ChangeType$ Remembered.sameName | Origin$ Library | Destination$ Exile | DefinedPlayer$ TargetedController | Chooser$ You | ChangeNum$ 3 | Shuffle$ True | StackDescription$ None
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Any | ValidCard$ Card.Self | Execute$ TrigReturn | Secondary$ True | TriggerDescription$ When CARDNAME leaves the battlefield, return the exiled cards to the zones they were exiled from.
+SVar:TrigReturn:DB$ ChangeZoneAll | Origin$ Exile | Destination$ Battlefield | ChangeType$ Card.ExiledWithSource+IsRemembered+!IsImprinted | SubAbility$ ReturnYard
+SVar:ReturnYard:DB$ ChangeZoneAll | Origin$ Exile | Destination$ Graveyard | ChangeType$ Card.ExiledWithSource+IsRemembered+IsImprinted | SubAbility$ ReturnHand
+SVar:ReturnHand:DB$ ChangeZoneAll | Origin$ Exile | Destination$ Hand | ChangeType$ Card.ExiledWithSource+!IsRemembered+IsImprinted | SubAbility$ ReturnLib
+SVar:ReturnLib:DB$ ChangeZoneAll | Origin$ Exile | Destination$ Library | ChangeType$ Card.ExiledWithSource+!IsRemembered+!IsImprinted | Shuffle$ True
+Oracle:Kicker {1}\nWhen Eternal Desire enters, exile target creature an opponent controls until CARDNAME leaves the battlefield. If CARDNAME was kicked, search that player's graveyard, hand, and library for up to three cards with the same name as that creature and exile them until CARDNAME leaves the battlefield. Then that player shuffles. When CARDNAME leaves the battlefield, return the exiled cards to the zones they were exiled from.

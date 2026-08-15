@@ -1,0 +1,6 @@
+Name:Ultima Dagger
+ManaCost:3
+Types:Legendary Artifact
+T:Mode$ SpellCast | ValidCard$ Creature | ValidActivatingPlayer$ Opponent | ActivatorThisTurnCast$ EQ2 | TriggerZones$ Battlefield | Execute$ TrigCounter | TriggerDescription$ Whenever an opponent casts their second creature spell each turn, counter it.
+SVar:TrigCounter:DB$ Counter | Defined$ TriggeredSpellAbility
+Oracle:Whenever an opponent casts their second creature spell each turn, counter it.

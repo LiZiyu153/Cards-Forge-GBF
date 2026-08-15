@@ -1,0 +1,10 @@
+Name:Sword Song Dancer
+ManaCost:1 W
+Types:Creature Human
+PT:2/1
+K:Flash
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigChoice | TriggerDescription$ When CARDNAME enters, choose one —\n• Target creature gets +1/+1 and gains vigilance until end of turn.\n• Exile target card from a graveyard.
+SVar:TrigChoice:DB$ Charm | Choices$ DBPump,DBExile | SpellDescription$ When CARDNAME enters, choose one — Target creature gets +1/+1 and gains vigilance until end of turn, or exile target card from a graveyard.
+SVar:DBPump:DB$ Pump | ValidTgts$ Creature | NumAtt$ 1 | NumDef$ 1 | KW$ Vigilance | SpellDescription$ Target creature gets +1/+1 and gains vigilance until end of turn.
+SVar:DBExile:DB$ ChangeZone | ValidTgts$ Card | TgtPrompt$ Choose target card in a graveyard | Origin$ Graveyard | Destination$ Exile | SpellDescription$ Exile target card from a graveyard.
+Oracle:Flash\nWhen Sword Song Dancer enters, choose one —\n• Target creature gets +1/+1 and gains vigilance until end of turn.\n• Exile target card from a graveyard.

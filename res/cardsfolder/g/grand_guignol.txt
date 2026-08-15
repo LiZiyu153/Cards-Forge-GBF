@@ -1,0 +1,6 @@
+Name:Grand Guignol
+ManaCost:2 B
+Types:Enchantment
+S:Mode$ Continuous | Affected$ Creature.YouCtrl+counters_GE1_M1M1 | AddKeyword$ Deathtouch | Description$ Creatures you control with a -1/-1 counter on them have deathtouch.
+A:AB$ Destroy | Cost$ 3 B T Sac<1/Creature.YouCtrl> | ValidTgts$ Creature.nonArtifact | NoRegen$ True | SpellDescription$ Sacrifice a creature you control: Destroy target nonartifact creature. It can't be regenerated.
+Oracle:Creatures you control with a -1/-1 counter on them have deathtouch.\n{3}{B}{T}, Sacrifice a creature you control: Destroy target nonartifact creature. It can't be regenerated.

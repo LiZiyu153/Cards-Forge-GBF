@@ -1,0 +1,9 @@
+Name:Quelling Dance of Flame
+ManaCost:U
+Types:Enchantment Aura
+K:Enchant:Creature
+K:Vanishing:3
+A:SP$ Attach | ValidTgts$ Creature | AILogic$ Curse
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | SetPower$ 0 | SetToughness$ 1 | RemoveAllAbilities$ True | AddKeyword$ Defender | Description$ Enchanted creature has base power and toughness 0/1, loses all abilities, and has defender.
+SVar:AttachAILogic:Curse
+Oracle:Enchant creature\nVanishing 3\nEnchanted creature has base power and toughness 0/1, loses all abilities, and has defender.

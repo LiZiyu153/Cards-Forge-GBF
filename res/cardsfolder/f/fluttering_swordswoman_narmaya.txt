@@ -1,0 +1,8 @@
+Name:Fluttering Swordswoman,Narmaya
+ManaCost:4 B R
+Types:Legendary Creature Draph
+PT:3/4
+T:Mode$ DamageDone | ValidSource$ Card.Self | CombatDamage$ True | ValidTarget$ Creature | Execute$ TrigDealDamage | TriggerDescription$ Whenever CARDNAME deals combat damage to a creature, it deals damage equal to its power to target creature or player.
+SVar:TrigDealDamage:DB$ DealDamage | ValidTgts$ Creature,Player | NumDmg$ X
+SVar:X:Count$CardPower
+Oracle:Whenever Fluttering Swordswoman, Narmaya deals combat damage to a creature, it deals damage equal to its power to target creature or player.

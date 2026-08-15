@@ -1,0 +1,14 @@
+Name:Dissonant Desire
+ManaCost:1 B
+Types:Enchantment Aura
+K:Enchant:Creature
+K:Flash
+A:SP$ Attach | ValidTgts$ Creature | AILogic$ Pump
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | AddPower$ 2 | AddToughness$ 2 | AddKeyword$ Indestructible | Description$ Enchanted creature gets +2/+2 and has indestructible.
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigPayLife | TriggerDescription$ At the beginning of your upkeep, pay 2 life or sacrifice enchanted creature.
+SVar:TrigPayLife:DB$ Branch | BranchConditionSVar$ X | BranchConditionSVarCompare$ GE2 | TrueSubAbility$ DBPayLife | FalseSubAbility$ DBSac
+SVar:DBPayLife:DB$ LoseLife | Defined$ You | LifeAmount$ 2
+SVar:DBSac:DB$ Sacrifice | Defined$ Enchanted
+SVar:X:Count$YourLifeTotal
+SVar:AttachAILogic:Pump
+Oracle:Flash\nEnchant creature\nEnchanted creature gets +2/+2 and has indestructible.\nAt the beginning of your upkeep, pay 2 life or sacrifice enchanted creature.

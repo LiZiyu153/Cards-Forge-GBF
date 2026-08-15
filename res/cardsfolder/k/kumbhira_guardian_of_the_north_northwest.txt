@@ -1,0 +1,14 @@
+Name:Kumbhira,Guardian of the North-Northwest
+ManaCost:R G G
+Types:Legendary Creature Draph God
+PT:2/2
+K:Trample
+T:Mode$ ChangesZoneAll | ValidCards$ Boar.YouCtrl | Destination$ Battlefield | TriggerZones$ Battlefield | Execute$ TrigPutCounters | TriggerDescription$ Whenever one or more Boars enter the battlefield under your control, put that many +1/+1 counters on CARDNAME.
+SVar:TrigPutCounters:DB$ PutCounter | Defined$ Self | CounterType$ P1P1 | CounterNum$ X
+SVar:X:TriggerObjectsCards$Amount
+T:Mode$ DamageDealtOnce | ValidSource$ Card.Self | ValidTarget$ Player | CombatDamage$ True | TriggerZones$ Battlefield | Execute$ TrigFlip | TriggerDescription$ Whenever CARDNAME deals combat damage to a player, flip a coin. If you win the flip, create a 2/1 red and green Boar creature token. Otherwise, CARDNAME deals 2 damage to each player.
+SVar:TrigFlip:DB$ FlipCoin | WinSubAbility$ DBToken | LoseSubAbility$ DBDmg
+SVar:DBToken:DB$ Token | TokenScript$ rg_2_1_boar | TokenAmount$ 1 | TokenOwner$ You
+SVar:DBDmg:DB$ DamageAll | ValidPlayers$ Player | NumDmg$ 2 | ValidDescription$ each player.
+DeckHas:Ability$Counters|Token
+Oracle:Trample\nWhenever one or more Boars enter the battlefield under your control, put that many +1/+1 counters on CARDNAME.\nWhenever CARDNAME deals combat damage to a player, flip a coin. If you win the flip, create a 2/1 red and green Boar creature token. Otherwise, CARDNAME deals 2 damage to each player.

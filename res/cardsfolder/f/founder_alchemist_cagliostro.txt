@@ -1,0 +1,11 @@
+Name:Founder Alchemist,Cagliostro
+ManaCost:2 G
+Types:Legendary Creature Human
+PT:1/1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigToken | TriggerDescription$ When CARDNAME enters, create a 2/1 green Dragon artifact creature token with flying.
+SVar:TrigToken:DB$ Token | TokenScript$ g_2_1_dragon_artifact_flying
+A:AB$ Regenerate | Cost$ G/W Sac<1/Forest> | Defined$ Self | SubAbility$ DBPutCounter
+SVar:DBPutCounter:DB$ PutCounter | Defined$ Self | CounterType$ P1P1 | CounterNum$ 1 | SubAbility$ DBArtifact
+SVar:DBArtifact:DB$ Animate | Defined$ Self | Types$ Artifact,Creature,Human | SpellDescription$ Regenerate CARDNAME. Put a +1/+1 counter on it and it becomes an artifact creature in addition to its other types.
+DeckHas:Ability$Token|Counters
+Oracle:When Cagliostro enters, create a 2/1 green Dragon artifact creature token with flying.\n{G/W}, Sacrifice a Forest: Regenerate Cagliostro. Put a +1/+1 counter on it and it becomes an artifact creature in addition to its other types.

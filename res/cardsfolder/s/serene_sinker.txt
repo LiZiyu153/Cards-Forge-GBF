@@ -1,0 +1,6 @@
+Name:Serene Sinker
+ManaCost:U
+Types:Instant
+K:Split second
+A:SP$ ChangeZone | ValidTgts$ Artifact | Origin$ Battlefield | Destination$ Hand
+Oracle:Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nReturn target artifact to its owner's hand.

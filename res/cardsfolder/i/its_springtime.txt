@@ -1,0 +1,9 @@
+Name:It's Springtime!
+ManaCost:1 R W
+Types:Sorcery
+A:SP$ DelayedTrigger | Mode$ Phase | Phase$ End of Turn | Execute$ TrigUntapPump | TriggerDescription$ At the beginning of your end step, untap all tapped creatures you control. For each creature untapped this way, put a +1/+1 counter on it.
+SVar:TrigUntapPump:DB$ RepeatEach | RepeatCards$ Creature.YouCtrl+tapped | RepeatSubAbility$ DBUntapOne
+SVar:DBUntapOne:DB$ Untap | Defined$ Remembered | SubAbility$ DBPutCounter
+SVar:DBPutCounter:DB$ PutCounter | Defined$ Remembered | CounterType$ P1P1 | CounterNum$ 1
+DeckHas:Ability$Counters
+Oracle:At the beginning of your end step, untap all tapped creatures you control. For each creature untapped this way, put a +1/+1 counter on it.

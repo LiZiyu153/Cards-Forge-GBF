@@ -1,0 +1,10 @@
+Name:Nightmare Wish
+ManaCost:R
+Types:Sorcery
+K:Tiered
+A:SP$ Charm | Choices$ DBDeal2,DBSweep,DBRedAttack
+SVar:DBDeal2:DB$ DealDamage | ValidTgts$ Creature | NumDmg$ 2 | ModeCost$ 0 | PrecostDesc$ きまぐれカシマール | SpellDescription$ Deal 2 damage to target creature.
+SVar:DBSweep:DB$ DamageAll | ValidTgts$ Player | ValidCards$ Creature | NumDmg$ 2 | ModeCost$ 3 | PrecostDesc$ もっとおねがいカシマール | SpellDescription$ Deal 2 damage to each creature target player controls.
+SVar:DBRedAttack:DB$ Effect | StaticAbilities$ RedUnblockable | ModeCost$ 6 | PrecostDesc$ オレサマニマカセナ！ | SpellDescription$ Red creatures you control can't be blocked this turn except by red creatures.
+SVar:RedUnblockable:Mode$ CantBlockBy | ValidAttacker$ Creature.Red+YouCtrl | ValidBlocker$ Creature.nonRed | Description$ Red creatures you control can't be blocked except by red creatures.
+Oracle:Tiered (Choose one additional cost.)\n• きまぐれカシマール — {0} — Deal 2 damage to target creature.\n• もっとおねがいカシマール — {3} — Deal 2 damage to each creature target player controls.\n• オレサマニマカセナ！ — {6} — Red creatures you control can't be blocked this turn except by red creatures.

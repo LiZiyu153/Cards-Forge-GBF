@@ -1,0 +1,7 @@
+Name:All Sensation
+ManaCost:2 G
+Types:Sorcery
+A:SP$ PutCounterAll | ValidCards$ Creature.YouCtrl | CounterType$ P1P1 | CounterNum$ 1 | SubAbility$ DBPump
+SVar:DBPump:DB$ PumpAll | ValidCards$ Creature.YouCtrl | KW$ Trample
+DeckHas:Ability$Counters
+Oracle:Put a +1/+1 counter on each creature you control. Those creatures gain trample until end of turn.

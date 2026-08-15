@@ -1,0 +1,7 @@
+Name:Goblin Killer
+ManaCost:2 R
+Types:Creature Human
+PT:2/2
+S:Mode$ Continuous | Affected$ Creature.YouCtrl+blocking_Goblin,Creature.YouCtrl+blockedby_Goblin | AddPower$ 2 | Description$ Creatures you control get +2/+0 as long as they are blocking or blocked by a Goblin.
+A:AB$ Pump | Cost$ 3 R | ValidTgts$ Creature | KW$ Double Strike | SpellDescription$ Target creature gains double strike until end of turn.
+Oracle:Creatures you control get +2/+0 as long as they are blocking or blocked by a Goblin.\n{3}{R}: Target creature gains double strike until end of turn.

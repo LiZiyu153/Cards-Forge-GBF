@@ -1,0 +1,6 @@
+Name:Wind's Solace
+ManaCost:G
+Types:Instant
+A:SP$ DestroyAll | ValidTgts$ Permanent.YouCtrl | RememberTargets$ True | SubAbility$ DBDestroy | SpellDescription$ Destroy all Auras attached to target permanent you control.
+SVar:DBDestroy:DB$ DestroyAll | ValidCards$ Aura.AttachedTo Card.IsRemembered
+Oracle:Destroy all Auras attached to target permanent you control.

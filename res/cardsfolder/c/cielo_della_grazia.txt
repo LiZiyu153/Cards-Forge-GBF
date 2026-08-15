@@ -1,0 +1,8 @@
+Name:Cielo della Grazia
+ManaCost:2 W
+Types:Enchantment Aura
+K:Enchant:Creature
+A:SP$ Attach | ValidTgts$ Creature | AILogic$ Pump
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | AddKeyword$ First Strike | AddPower$ 2 | AddToughness$ 3 | Description$ Enchanted creature gets +2/+3 and has first strike.
+SVar:AttachAILogic:Pump
+Oracle:Enchant creature\nEnchanted creature gets +2/+3 and has first strike.

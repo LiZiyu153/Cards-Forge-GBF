@@ -1,0 +1,12 @@
+Name:Maid of Iron Fists
+ManaCost:1 B
+Types:Creature Human
+PT:2/2
+K:First Strike
+S:Mode$ Continuous | Affected$ Card.Self+equipped | AddKeyword$ Deathtouch | Description$ As long as CARDNAME is equipped, it has deathtouch.
+A:AB$ Repeat | Cost$ 4 B T | ValidTgts$ Player | RepeatSubAbility$ DBClear | RepeatDefined$ Remembered | RepeatPresent$ Permanent.nonLand | RepeatCompare$ EQ1 | SubAbility$ DBCleanup | SpellDescription$ Target player sacrifices a permanent they control. If it wasn't a land, repeat this process.
+SVar:DBClear:DB$ Cleanup | ClearRemembered$ True | SubAbility$ DBSac
+SVar:DBSac:DB$ Sacrifice | Defined$ Targeted | SacValid$ Permanent | Amount$ 1 | RememberSacrificed$ True
+SVar:DBCleanup:DB$ Cleanup | ClearRemembered$ True
+SVar:PlayMain1:TRUE
+Oracle:First strike\nAs long as Maid of Iron Fists is equipped, it has deathtouch.\n{4}{B}{T}: Target player sacrifices a permanent they control. If it wasn't a land, repeat this process.

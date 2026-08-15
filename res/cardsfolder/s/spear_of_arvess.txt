@@ -1,0 +1,6 @@
+Name:Spear of Arvess
+ManaCost:R G
+Types:Instant
+A:SP$ Pump | ValidTgts$ Creature.YouCtrl | NumAtt$ 3 | SubAbility$ DBFight
+SVar:DBFight:DB$ Fight | Defined$ Targeted | ValidTgts$ Creature.OppCtrl
+Oracle:Target creature you control gets +3/+0 until end of turn. Then it fights target creature you don't control.

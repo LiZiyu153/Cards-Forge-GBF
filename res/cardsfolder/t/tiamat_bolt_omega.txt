@@ -1,0 +1,9 @@
+Name:Tiamat Bolt Omega
+ManaCost:1 G
+Types:Artifact Equipment
+K:Equip:1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigAttach | TriggerDescription$ When CARDNAME enters, attach it to target creature you control.
+SVar:TrigAttach:DB$ Attach | ValidTgts$ Creature.YouCtrl
+S:Mode$ Continuous | Affected$ Creature.EquippedBy | AddPower$ 1 | AddAbility$ EquipSac | Description$ Equipped creature gets +1/+0 and has "{T}: Sacrifice Tiamat Bolt Omega. Destroy target artifact you don't control."
+SVar:EquipSac:AB$ Destroy | Cost$ T Sac<1/OriginalHost/Tiamat Bolt Omega> | ValidTgts$ Artifact.YouDontCtrl | TgtPrompt$ Select target artifact you don't control | SpellDescription$ Destroy target artifact you don't control.
+Oracle:When Tiamat Bolt Omega enters, attach it to target creature you control.\nEquipped creature gets +1/+0 and has "{T}: Sacrifice Tiamat Bolt Omega. Destroy target artifact you don't control."\nEquip {1}

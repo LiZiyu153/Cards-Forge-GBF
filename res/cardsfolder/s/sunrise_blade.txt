@@ -1,0 +1,8 @@
+Name:Sunrise Blade
+ManaCost:1 G
+Types:Instant
+A:SP$ Charm | Choices$ DBCounterPW,DBPutCounters
+SVar:DBCounterPW:DB$ Counter | ValidTgts$ Planeswalker.LoyaltyAbility | TargetType$ Ability | SpellDescription$ Counter target loyalty ability of a planeswalker.
+SVar:DBPutCounters:DB$ PutCounter | ValidTgts$ Creature.YouCtrl | CounterType$ P1P1 | CounterNum$ 2 | SpellDescription$ Put two +1/+1 counters on target creature you control.
+DeckHas:Ability$Counters
+Oracle:Choose one —\n• Counter target loyalty ability of a planeswalker.\n• Put two +1/+1 counters on target creature you control.

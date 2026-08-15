@@ -1,0 +1,6 @@
+Name:Celeste Claw Omega
+ManaCost:1
+Types:Artifact Equipment
+K:Equip:1
+S:Mode$ Continuous | Affected$ Creature.EquippedBy+counters_GE1_M1M1 | AddKeyword$ Double Strike | Description$ Equipped creature has double strike as long as it has a -1/-1 counter on it.
+Oracle:Equipped creature has double strike as long as it has a -1/-1 counter on it.\nEquip {1}

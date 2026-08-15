@@ -1,0 +1,8 @@
+Name:Violet Shadow Assassin
+ManaCost:1 B
+Types:Creature Human Assassin
+PT:1/3
+K:Lifelink
+T:Mode$ Attacks | ValidCard$ Card.Self | IsPresent$ Card.Self+attackingAlone | TriggerZones$ Battlefield | Execute$ TrigDeathtouch | TriggerDescription$ Whenever CARDNAME attacks alone, it gains deathtouch until end of turn.
+SVar:TrigDeathtouch:DB$ Pump | Defined$ Self | KW$ Deathtouch
+Oracle:Lifelink\nWhenever Violet Shadow Assassin attacks alone, it gains deathtouch until end of turn.

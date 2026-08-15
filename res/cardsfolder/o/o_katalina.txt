@@ -1,0 +1,7 @@
+Name:O Katalina
+ManaCost:B
+Types:Instant
+K:Kicker:2
+A:SP$ PutCounter | ValidTgts$ Creature.YouCtrl | CounterType$ Menace | CounterNum$ 1 | SubAbility$ DBKicked
+SVar:DBKicked:DB$ Destroy | Condition$ Kicked | ValidTgts$ Creature.blocking
+Oracle:Kicker {2}\nPut a menace counter on target creature you control. If this spell was kicked, destroy target blocking creature.

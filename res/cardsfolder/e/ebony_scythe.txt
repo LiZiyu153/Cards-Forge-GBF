@@ -1,0 +1,9 @@
+Name:Ebony Scythe
+ManaCost:B B B
+Rarity:U
+Types:Creature Draph Berserker
+PT:6/1
+K:Protection from white
+T:Mode$ DamageDealtOnce | CombatDamage$ True | ValidSource$ Card.Self | TriggerZones$ Battlefield | Execute$ TrigDiscard | TriggerDescription$ Whenever CARDNAME deals combat damage, each opponent discards a card.
+SVar:TrigDiscard:DB$ Discard | Defined$ Player.Opponent | Mode$ TgtChoose | NumCards$ 1
+Oracle:Protection from white\nWhenever Ebony Scythe deals combat damage, each opponent discards a card.

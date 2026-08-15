@@ -1,0 +1,13 @@
+Name:Princess of Seven Gems,De La Fille
+ManaCost:1 W
+Types:Legendary Creature Human
+PT:1/3
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Battlefield | CheckSVar$ HasTreasure | SVarCompare$ EQ0 | Execute$ TrigTreasure | TriggerDescription$ At the beginning of your upkeep, if you control no Treasure tokens, create a Treasure token.
+SVar:TrigTreasure:DB$ Token | TokenAmount$ 1 | TokenScript$ c_a_treasure_sac
+SVar:HasTreasure:Count$Valid Treasure.YouCtrl
+T:Mode$ Phase | Phase$ End of Turn | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigDestroyScry | TriggerDescription$ At the beginning of your end step, destroy all Treasure tokens you control, then scry that many.
+SVar:TrigDestroyScry:DB$ DestroyAll | ValidCards$ Treasure.YouCtrl | RememberDestroyed$ True | SubAbility$ DBScry
+SVar:DBScry:DB$ Scry | ScryNum$ X
+SVar:X:Remembered$Amount
+DeckHas:Ability$Token
+Oracle:At the beginning of your upkeep, if you control no Treasure tokens, create a Treasure token.\nAt the beginning of your end step, destroy all Treasure tokens you control, then scry that many.

@@ -1,0 +1,9 @@
+Name:Double Tap
+ManaCost:2 G
+Types:Instant
+S:Mode$ ReduceCost | ValidCard$ Card.Self | Type$ Spell | Amount$ X | EffectZone$ All | CheckSVar$ X | SVarCompare$ GE1 | Description$ Double Tap costs {1} less to cast if you control a green creature.
+SVar:X:Count$Valid Creature.Green+YouCtrl
+A:SP$ Charm | Choices$ DBLoseFlying,DBDestroy | SpellDescription$ Choose one —\n• Up to two target creatures with flying lose flying until end of turn.\n• Destroy target creature with flying.
+SVar:DBLoseFlying:DB$ Animate | ValidTgts$ Creature.withFlying | TargetMin$ 0 | TargetMax$ 2 | RemoveKeywords$ Flying | SpellDescription$ Up to two target creatures with flying lose flying until end of turn.
+SVar:DBDestroy:DB$ Destroy | ValidTgts$ Creature.withFlying | SpellDescription$ Destroy target creature with flying.
+Oracle:Double Tap costs {1} less to cast if you control a green creature.\nChoose one —\n• Up to two target creatures with flying lose flying until end of turn.\n• Destroy target creature with flying.

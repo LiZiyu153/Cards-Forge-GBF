@@ -1,0 +1,7 @@
+Name:Crosscut
+ManaCost:R
+Types:Instant
+A:SP$ DealDamage | ValidTgts$ Creature | NumDmg$ 1 | SubAbility$ DBExtra | SpellDescription$ CARDNAME deals 1 damage to target creature.
+SVar:DBExtra:DB$ DealDamage | ValidTgts$ Creature | TgtPrompt$ Choose a creature to be dealt 2 additional damage | TargetMin$ 0 | TargetMax$ 1 | NumDmg$ 2 | ConditionCheckSVar$ SM | ConditionSVarCompare$ GE2 | SpellDescription$ Spell mastery — If there are two or more instant and/or sorcery cards in your graveyard, CARDNAME deals 2 additional damage to a creature. You may choose a new target for this additional damage.
+SVar:SM:Count$ValidGraveyard Instant.YouOwn,Sorcery.YouOwn
+Oracle:CARDNAME deals 1 damage to target creature.\nSpell mastery — If there are two or more instant and/or sorcery cards in your graveyard, CARDNAME deals 2 additional damage to a creature. You may choose a new target for this additional damage.

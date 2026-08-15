@@ -1,0 +1,5 @@
+Name:Bedrock Rain
+ManaCost:G
+Types:Instant
+A:SP$ Pump | ValidTgts$ Creature | KW$ Trample & Reach
+Oracle:Target creature gains trample and reach until end of turn.

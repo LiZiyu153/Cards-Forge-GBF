@@ -1,0 +1,8 @@
+Name:Eagle Ruler of the Dawn
+ManaCost:1 W
+Types:Creature Human Bird
+PT:2/1
+T:Mode$ DamageDone | ValidSource$ Card.Self | CombatDamage$ True | ValidTarget$ Player | Execute$ TrigToken | TriggerDescription$ Whenever CARDNAME deals combat damage to a player, create a 1/1 white Bird creature token with flying.
+SVar:TrigToken:DB$ Token | TokenScript$ w_1_1_bird_flying
+DeckHas:Ability$Token
+Oracle:Whenever Eagle Ruler of the Dawn deals combat damage to a player, create a 1/1 white Bird creature token with flying.

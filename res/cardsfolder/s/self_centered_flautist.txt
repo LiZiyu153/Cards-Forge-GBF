@@ -1,0 +1,9 @@
+Name:Self-Centered Flautist
+ManaCost:3 W
+Rarity:R
+Types:Creature Harvin
+PT:2/2
+K:Flash
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigExile | TriggerDescription$ When CARDNAME enters, exile target creature an opponent controls until CARDNAME leaves the battlefield.
+SVar:TrigExile:DB$ ChangeZone | ValidTgts$ Creature.OppCtrl | TgtPrompt$ Select target creature an opponent controls | Origin$ Battlefield | Destination$ Exile | Duration$ UntilHostLeavesPlay | SpellDescription$ Exile target creature an opponent controls until CARDNAME leaves the battlefield.
+Oracle:Flash\nWhen Self-Centered Flautist enters, exile target creature an opponent controls until Self-Centered Flautist leaves the battlefield.

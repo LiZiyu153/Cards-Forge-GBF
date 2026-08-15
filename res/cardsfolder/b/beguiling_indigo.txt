@@ -1,0 +1,9 @@
+Name:Beguiling Indigo
+ManaCost:1 G
+Types:Enchantment Aura
+K:Enchant:Creature
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigDestroy | TriggerDescription$ When CARDNAME enters, destroy all other Auras attached to enchanted creature.
+SVar:TrigDestroy:DB$ DestroyAll | ValidCards$ Aura.AttachedTo Creature.EnchantedBy+!Self
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | AddKeyword$ Hexproof | Description$ Enchanted creature has hexproof.
+SVar:AttachAILogic:Curse
+Oracle:Enchant creature\nWhen CARDNAME enters, destroy all other Auras attached to enchanted creature. Enchanted creature has hexproof.

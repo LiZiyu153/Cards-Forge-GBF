@@ -1,0 +1,9 @@
+Name:Bewitching Rose of the Blue Sky,Rosetta
+ManaCost:3 W W
+Types:Legendary Enchantment Creature Primal
+PT:4/4
+K:Bestow:W ExileFromHand<1/Card.White>
+K:Vanishing:5
+K:Ward:PayLife<4>
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy+Other | AddPower$ 4 | AddToughness$ 4 | AddKeyword$ Ward:PayLife<4> | Description$ Enchanted creature gets +4/+4 and has ward—Pay 4 life.
+Oracle:Bestow {W}, Exile a white card from your hand\nVanishing 5\nWard—Pay 4 life.\nEnchanted creature gets +4/+4 and has ward—Pay 4 life.

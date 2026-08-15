@@ -1,0 +1,9 @@
+Name:Unforgettable Summer
+ManaCost:1 W
+Types:Enchantment Aura
+K:Enchant:Creature
+K:Flash
+A:SP$ Attach | ValidTgts$ Creature | AILogic$ Pump
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | AddKeyword$ Flying | AddPower$ 1 | AddToughness$ 1 | Description$ Enchanted creature gets +1/+1 and has flying.
+SVar:AttachAILogic:Pump
+Oracle:Flash\nEnchant creature\nEnchanted creature gets +1/+1 and has flying.

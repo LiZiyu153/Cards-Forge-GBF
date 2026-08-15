@@ -1,0 +1,11 @@
+Name:Blue-Green Magical Girl,Io
+ManaCost:4 W/U/B/R/G
+Types:Legendary Creature Human Wizard
+PT:1/1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigSearch | TriggerDescription$ When CARDNAME enters, for each color of mana spent to cast it, search your library for a card of that color, reveal it, and put it into your hand, then shuffle.
+SVar:TrigSearch:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card.White | ChangeNum$ 1 | Shuffle$ True | ConditionCheckSVar$ CastSA>Count$Adamant_1.White.1.0 | ConditionSVarCompare$ GE1 | SubAbility$ DBSearchBlue
+SVar:DBSearchBlue:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card.Blue | ChangeNum$ 1 | Shuffle$ True | ConditionCheckSVar$ CastSA>Count$Adamant_1.Blue.1.0 | ConditionSVarCompare$ GE1 | SubAbility$ DBSearchBlack
+SVar:DBSearchBlack:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card.Black | ChangeNum$ 1 | Shuffle$ True | ConditionCheckSVar$ CastSA>Count$Adamant_1.Black.1.0 | ConditionSVarCompare$ GE1 | SubAbility$ DBSearchRed
+SVar:DBSearchRed:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card.Red | ChangeNum$ 1 | Shuffle$ True | ConditionCheckSVar$ CastSA>Count$Adamant_1.Red.1.0 | ConditionSVarCompare$ GE1 | SubAbility$ DBSearchGreen
+SVar:DBSearchGreen:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card.Green | ChangeNum$ 1 | Shuffle$ True | ConditionCheckSVar$ CastSA>Count$Adamant_1.Green.1.0 | ConditionSVarCompare$ GE1
+Oracle:When Blue-Green Magical Girl, Io enters, for each color of mana spent to cast it, search your library for a card of that color, reveal it, and put it into your hand, then shuffle.

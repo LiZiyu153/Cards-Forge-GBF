@@ -1,0 +1,8 @@
+Name:Die Drachenkanone
+ManaCost:U
+Types:Instant
+K:Kicker:3
+A:SP$ Tap | ValidTgts$ Creature | TargetMin$ X | TargetMax$ X | TgtPrompt$ Select target creature | SubAbility$ DBStun | SpellDescription$ Tap target creature and put a stun counter on it. If this spell was kicked, choose two additional targets for it.
+SVar:DBStun:DB$ PutCounter | Defined$ Targeted | CounterType$ Stun | CounterNum$ 1
+SVar:X:Count$Kicked.3.1
+Oracle:Kicker {3}\nTap target creature and put a stun counter on it. If this spell was kicked, choose two additional targets for it.

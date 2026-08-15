@@ -1,0 +1,8 @@
+Name:Summer Memories
+ManaCost:2 U U
+Types:Sorcery
+A:SP$ Draw | NumCards$ X | SubAbility$ DBDiscardLater
+SVar:DBDiscardLater:DB$ DelayedTrigger | Mode$ Phase | Phase$ End of Turn | Execute$ TrigDiscard | TriggerDescription$ At the beginning of the end step, discard your hand.
+SVar:TrigDiscard:DB$ Discard | Defined$ You | Mode$ Hand
+SVar:X:Count$ValidHand Card.YouOwn/NMinus.7
+Oracle:You draw cards until you have seven cards in hand. At the beginning of the end step, discard your hand.

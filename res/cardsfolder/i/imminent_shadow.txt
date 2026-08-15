@@ -1,0 +1,6 @@
+Name:Imminent Shadow
+ManaCost:R R R
+Types:Sorcery
+A:SP$ DealDamage | ValidTgts$ Creature | NumDmg$ 3 | SubAbility$ DBTapAll
+SVar:DBTapAll:DB$ TapAll | ValidCards$ Creature.OppCtrl
+Oracle:Imminent Shadow deals 3 damage to target creature. Tap all creatures your opponents control.

@@ -1,0 +1,10 @@
+Name:Perpetual Tailwind
+ManaCost:W
+Types:Enchantment Creature
+PT:*/*+1
+S:Mode$ Continuous | Affected$ Card.Self | SetPower$ P | SetToughness$ T | Description$ CARDNAME's power is equal to the number of enchantments in your graveyard plus enchantments you control. Its toughness is equal to that number plus 1.
+SVar:P:Count$Valid Enchantment.YouCtrl,Enchantment.YourGrave
+SVar:T:Count$Valid Enchantment.YouCtrl,Enchantment.YourGrave/Plus.1
+S:Mode$ Continuous | Affected$ Creature.YouCtrl | CheckSVar$ X | SVarCompare$ GE1 | AddKeyword$ Ward:2 | Description$ As long as you control a creature with flying, creatures you control have ward {2}.
+SVar:X:Count$Valid Creature.withFlying+YouCtrl
+Oracle:Perpetual Tailwind's power is equal to the number of enchantments in your graveyard plus enchantments you control. Its toughness is equal to that number plus 1.\nAs long as you control a creature with flying, creatures you control have ward {2}.

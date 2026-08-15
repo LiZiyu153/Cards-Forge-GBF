@@ -1,0 +1,7 @@
+Name:Priestess of the Sun
+ManaCost:W R
+Types:Creature Harvin
+PT:1/1
+S:Mode$ Continuous | Affected$ Creature.Red+YouCtrl | AddKeyword$ Lifelink | Description$ Red creatures you control have lifelink.
+S:Mode$ Continuous | Affected$ Creature.White+YouCtrl | AddPower$ 1 | AddToughness$ 1 | Description$ White creatures you control get +1/+1.
+Oracle:Red creatures you control have lifelink.\nWhite creatures you control get +1/+1.

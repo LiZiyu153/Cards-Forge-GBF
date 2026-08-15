@@ -1,0 +1,9 @@
+Name:Awakened Dragoness,Grea
+ManaCost:R R
+Types:Legendary Creature Dragon
+PT:2/1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigDamage | TriggerDescription$ When CARDNAME enters, it deals 1 damage to each of up to two target creatures an opponent controls. For each creature destroyed this way, search your library for a basic Mountain card, reveal it, and put it into your hand, then shuffle.
+SVar:TrigDamage:DB$ DealDamage | ValidTgts$ Creature.OppCtrl | TargetMin$ 0 | TargetMax$ 2 | NumDmg$ 1 | RememberDamaged$ True | SubAbility$ DBSearch
+SVar:DBSearch:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Mountain.Basic | ChangeNum$ X | Shuffle$ True
+SVar:X:Remembered$Amount
+Oracle:When Awakened Dragoness, Grea enters, it deals 1 damage to each of up to two target creatures an opponent controls. For each creature destroyed this way, search your library for a basic Mountain card, reveal it, and put it into your hand, then shuffle.

@@ -1,0 +1,8 @@
+Name:Heaven-Sent Child of the Wind and Waves
+ManaCost:2 U
+Types:Creature Erune
+PT:2/2
+K:Flash
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigLoseAbilities | TriggerDescription$ When CARDNAME enters, target tapped creature an opponent controls loses all abilities until end of turn.
+SVar:TrigLoseAbilities:DB$ Animate | ValidTgts$ Creature.OppCtrl+tapped | RemoveAllAbilities$ True
+Oracle:Flash\nWhen Heaven-Sent Child of the Wind and Waves enters, target tapped creature an opponent controls loses all abilities until end of turn.

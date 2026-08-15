@@ -1,0 +1,7 @@
+Name:Maid Aflame
+ManaCost:W R
+Types:Creature Human
+PT:2/2
+K:Lifelink
+A:AB$ DealDamage | Cost$ T 6 R | ValidTgts$ Creature.OppCtrl | TargetMin$ 1 | TargetMax$ 2 | NumDmg$ 4 | DividedAsYouChoose$ 4 | SpellDescription$ CARDNAME deals 4 damage divided as you choose among one or two target creatures you don't control.
+Oracle:Lifelink\n{T}{6}{R}: Maid Aflame deals 4 damage divided as you choose among one or two target creatures you don't control.

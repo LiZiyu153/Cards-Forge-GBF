@@ -1,0 +1,9 @@
+Name:Bitter Swordsman
+ManaCost:2 B
+Types:Creature Erune Warrior
+PT:6/8
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigPutCounters | TriggerDescription$ CARDNAME enters with five -1/-1 counters on it.
+SVar:TrigPutCounters:DB$ PutCounter | Defined$ Self | CounterType$ M1M1 | CounterNum$ 5
+A:AB$ RemoveCounter | Cost$ 2 | Defined$ Self | CounterType$ M1M1 | CounterNum$ 1 | SubAbility$ DBPutTarget
+SVar:DBPutTarget:DB$ PutCounter | ValidTgts$ Creature | CounterType$ M1M1 | CounterNum$ 1
+Oracle:CARDNAME enters with five -1/-1 counters on it.\n{2}: Move a -1/-1 counter from CARDNAME onto target creature.

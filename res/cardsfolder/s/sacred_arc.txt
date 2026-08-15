@@ -1,0 +1,7 @@
+Name:Sacred Arc
+ManaCost:4 W W
+Types:Enchantment
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigChooseColor | TriggerDescription$ When CARDNAME enters, choose a color. You and creatures you control have protection from the chosen color for as long as CARDNAME remains on the battlefield.
+SVar:TrigChooseColor:DB$ ChooseColor | Defined$ You
+S:Mode$ Continuous | Affected$ You,Creature.YouCtrl | AddKeyword$ Protection:Card.ChosenColor:chosenColor:Card.CardUID_HostCardUID | Description$ You and creatures you control have protection from the chosen color.
+Oracle:When Sacred Arc enters, choose a color.\\nYou and creatures you control have protection from the chosen color.

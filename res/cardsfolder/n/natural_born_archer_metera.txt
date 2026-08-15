@@ -1,0 +1,8 @@
+Name:Natural-Born Archer,Metera
+ManaCost:R R
+Types:Legendary Creature Erune Archer
+PT:2/2
+K:Flash
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigDealDamage | TriggerDescription$ When CARDNAME enters, it deals 3 damage to target creature.
+SVar:TrigDealDamage:DB$ DealDamage | ValidTgts$ Creature | NumDmg$ 3
+Oracle:Flash\nWhen Metera enters, it deals 3 damage to target creature.

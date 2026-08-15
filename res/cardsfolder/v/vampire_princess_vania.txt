@@ -1,0 +1,12 @@
+Name:Vampire Princess,Vania
+ManaCost:1 B B
+Types:Legendary Creature Vampire
+PT:3/3
+K:Lifelink
+S:Mode$ CantBlockBy | ValidAttacker$ Creature.YouCtrl | ValidBlocker$ Creature.Human | Description$ Creatures you control can't be blocked by Humans.
+S:Mode$ Continuous | Affected$ Card.Self | CheckSVar$ X | SVarCompare$ GE1 | AddKeyword$ Flying | Description$ As long as you control a creature with flying, CARDNAME has flying.
+SVar:X:Count$Valid Creature.withFlying+YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Vampire.!token+YouCtrl | TriggerZones$ Battlefield | Execute$ TrigToken | TriggerDescription$ Whenever a nontoken Vampire enters under your control, create a 2/2 black Vampire creature token with lifelink.
+SVar:TrigToken:DB$ Token | TokenScript$ b_2_2_vampire_lifelink
+DeckHas:Ability$Token
+Oracle:Lifelink\nCreatures you control can't be blocked by Humans.\nAs long as you control a creature with flying, Vania has flying.\nWhenever a nontoken Vampire enters under your control, create a 2/2 black Vampire creature token with lifelink.

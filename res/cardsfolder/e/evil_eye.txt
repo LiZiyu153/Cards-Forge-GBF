@@ -1,0 +1,6 @@
+Name:Evil Eye
+ManaCost:1 B B
+Types:Instant
+A:SP$ RepeatEach | ValidTgts$ Player | Zone$ Battlefield | RepeatCards$ Creature.nonArtifact+TargetedPlayerCtrl | RepeatSubAbility$ DBPayOrSac | SpellDescription$ For each nonartifact creature target player controls, that player sacrifices it unless they pay {2}.
+SVar:DBPayOrSac:DB$ Sacrifice | Defined$ Targeted | SacValid$ Card.IsRemembered | Amount$ 1 | UnlessCost$ 2 | UnlessPayer$ Targeted
+Oracle:For each nonartifact creature target player controls, that player sacrifices it unless they pay {2}.

@@ -1,0 +1,10 @@
+Name:Good Man Seeking Vengeance,Sevilbarra
+ManaCost:2 W
+Types:Legendary Creature Harvin
+PT:2/1
+S:Mode$ ReduceCost | ValidCard$ Card.Self | Type$ Spell | Amount$ 2 | EffectZone$ All | CheckSVar$ X | SVarCompare$ LTY | Description$ CARDNAME costs {2} less to cast if you control fewer creatures than an opponent.
+SVar:X:Count$Valid Creature.YouCtrl
+SVar:Y:PlayerCountOpponents$HighestValid Creature.YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigExile | TriggerDescription$ When CARDNAME enters, exile target tapped creature.
+SVar:TrigExile:DB$ ChangeZone | ValidTgts$ Creature.tapped | Origin$ Battlefield | Destination$ Exile
+Oracle:Good Man Seeking Vengeance, Sevilbarra costs {2} less to cast if you control fewer creatures than an opponent.\\nWhen Sevilbarra enters, exile target tapped creature.

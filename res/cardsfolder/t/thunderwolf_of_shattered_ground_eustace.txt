@@ -1,0 +1,9 @@
+Name:Thunderwolf of Shattered Ground,Eustace
+ManaCost:3 B
+Types:Legendary Creature Erune
+PT:2/3
+S:Mode$ Continuous | Affected$ Dog.YouCtrl | AddKeyword$ Lifelink | AddPower$ 2 | Description$ Dogs you control have lifelink and get +2/+0.
+T:Mode$ Blocks | ValidCard$ Card.Self | ValidBlocked$ Creature.Primal | Execute$ TrigDeathtouch | TriggerDescription$ Whenever CARDNAME blocks or is blocked by a Primal, it gains deathtouch until end of turn.
+SVar:TrigDeathtouch:DB$ Pump | Defined$ Self | KW$ Deathtouch
+T:Mode$ AttackerBlocked | ValidCard$ Card.Self | ValidBlocker$ Creature.Primal | Execute$ TrigDeathtouch | Secondary$ True
+Oracle:Dogs you control have lifelink and get +2/+0.\nWhenever Eustace blocks or is blocked by a Primal, it gains deathtouch until end of turn.

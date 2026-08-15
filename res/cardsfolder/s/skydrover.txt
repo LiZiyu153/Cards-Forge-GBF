@@ -1,0 +1,9 @@
+Name:Skydrover
+ManaCost:2 B R
+Types:Creature Draph Warrior
+PT:3/3
+S:Mode$ Continuous | Affected$ Card.Self | CheckSVar$ X | SVarCompare$ GE1 | AddKeyword$ Trample & Double Strike | Description$ As long as you control a Dragon, CARDNAME has trample and double strike.
+SVar:X:Count$Valid Creature.Dragon+YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigReanimate | TriggerDescription$ When CARDNAME enters, return target Dragon creature card from your graveyard to the battlefield.
+SVar:TrigReanimate:DB$ ChangeZone | ValidTgts$ Creature.Dragon+YouCtrl | Origin$ Graveyard | Destination$ Battlefield
+Oracle:As long as you control a Dragon, Skydrover has trample and double strike.\nWhen Skydrover enters, return target Dragon creature card from your graveyard to the battlefield.

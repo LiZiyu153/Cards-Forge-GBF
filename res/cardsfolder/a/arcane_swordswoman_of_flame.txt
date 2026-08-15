@@ -1,0 +1,6 @@
+Name:Arcane Swordswoman of Flame
+ManaCost:R
+Types:Creature Human Soldier
+PT:1/1
+S:Mode$ Continuous | Affected$ Card.Self+equipped | AddPower$ 1 | AddKeyword$ Double Strike | Description$ As long as CARDNAME is equipped, it has double strike and gets +1/+0.
+Oracle:As long as Arcane Swordswoman of Flame is equipped, it has double strike and gets +1/+0.

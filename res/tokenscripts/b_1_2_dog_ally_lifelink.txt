@@ -1,0 +1,7 @@
+Name:Dog Ally Token
+ManaCost:no cost
+Colors:black
+Types:Creature Dog Ally
+PT:1/2
+K:Lifelink
+Oracle:Lifelink

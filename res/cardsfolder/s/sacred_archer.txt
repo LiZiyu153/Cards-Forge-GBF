@@ -1,0 +1,7 @@
+Name:Sacred Archer
+ManaCost:1 G
+Types:Creature Erune Archer
+PT:1/3
+K:Reach
+S:Mode$ Continuous | Affected$ Creature.Erune+YouCtrl | AddKeyword$ Reach | Description$ Erune creatures you control have reach.
+Oracle:Reach\nErune creatures you control have reach.

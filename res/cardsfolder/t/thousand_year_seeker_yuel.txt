@@ -1,0 +1,11 @@
+Name:Thousand-Year Seeker,Yuel
+ManaCost:U R
+Types:Legendary Creature Erune
+PT:1/2
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigBounce | TriggerDescription$ When CARDNAME enters, return target nonland permanent you control to its owner's hand. Draw a card.
+SVar:TrigBounce:DB$ ChangeZone | ValidTgts$ Permanent.nonLand+YouCtrl | Origin$ Battlefield | Destination$ Hand | SubAbility$ DBDraw
+SVar:DBDraw:DB$ Draw
+T:Mode$ Attacks | ValidCard$ Card.Self | Execute$ TrigTreasure | TriggerDescription$ Whenever CARDNAME attacks, create a Treasure token.
+SVar:TrigTreasure:DB$ Token | TokenScript$ c_a_treasure_sac
+DeckHas:Ability$Token
+Oracle:When Yuel enters, return target nonland permanent you control to its owner's hand. Draw a card.\nWhenever Yuel attacks, create a Treasure token.

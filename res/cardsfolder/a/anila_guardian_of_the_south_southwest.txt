@@ -1,0 +1,13 @@
+Name:Anila,Guardian of the South-Southwest
+ManaCost:W W U
+Types:Legendary Creature Draph God
+PT:0/3
+K:Flash
+K:Warp:1 WU ExileFromGrave<2/Card>
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigETB | TriggerDescription$ When CARDNAME enters, target creature loses all abilities and becomes a 0/1 Sheep creature. That creature's controller may play one card they own from exile this turn.
+SVar:TrigETB:DB$ Animate | ValidTgts$ Creature | Power$ 0 | Toughness$ 1 | RemoveAllAbilities$ True | Types$ Sheep | RemoveCreatureTypes$ True | Duration$ Permanent | SubAbility$ DBMayPlay
+SVar:DBMayPlay:DB$ Animate | Defined$ Targeted | staticAbilities$ STPlay
+SVar:STPlay:Mode$ Continuous | MayPlay$ True | MayPlayLimit$ 1 | Affected$ Card.YouOwn | AffectedZone$ Exile | Description$ That creature's controller may play one card they own from exile this turn.
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Any | ValidCard$ Card.Self | Execute$ TrigLeave | TriggerDescription$ When CARDNAME leaves the battlefield, exile all Sheep and Goats.
+SVar:TrigLeave:DB$ ChangeZoneAll | ChangeType$ Creature.Sheep,Creature.Goat | Origin$ Battlefield | Destination$ Exile
+Oracle:Flash\nWarp—{1}{W/U}, Exile two cards from your graveyard. (You may cast this card from your hand for its warp cost. If you do, exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.)\nWhen CARDNAME enters, target creature loses all abilities and becomes a 0/1 Sheep creature. That creature's controller may play one card they own from exile this turn.\nWhen CARDNAME leaves the battlefield, exile all Sheep and Goats.

@@ -1,0 +1,6 @@
+Name:Leviathan Gaze Omega
+ManaCost:1
+Types:Artifact Equipment
+K:Equip:1
+S:Mode$ Continuous | Affected$ Creature.EquippedBy | Condition$ NotPlayerTurn | AddKeyword$ First Strike | AddPower$ 1 | AddToughness$ 1 | Description$ During opponent's turns, equipped creature gets +1/+1 and has first strike.
+Oracle:During opponent's turns, equipped creature gets +1/+1 and has first strike.\nEquip {1}

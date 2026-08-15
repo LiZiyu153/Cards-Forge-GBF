@@ -1,0 +1,21 @@
+Name:Vikala,Guardian of the North
+ManaCost:B B B
+Types:Legendary Creature Human God
+PT:0/1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigToken | TriggerDescription$ When CARDNAME enters, create a number of 0/1 black Rat creature tokens equal to the number of lands you control.
+SVar:TrigToken:DB$ Token | TokenAmount$ TokenCount | TokenScript$ b_0_1_rat | TokenOwner$ You
+SVar:TokenCount:Count$Valid Land.YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Creature.!token+Other | TriggerZones$ Battlefield | Execute$ TrigSacSelf | TriggerDescription$ Whenever another nontoken creature enters the battlefield, sacrifice CARDNAME.
+SVar:TrigSacSelf:DB$ Sacrifice | SacValid$ Self
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Card.Self | Execute$ TrigDeath | TriggerDescription$ When CARDNAME dies, ABILITY
+SVar:TrigDeath:DB$ Charm | Choices$ DBMill,DBPutCounter,DBMana
+SVar:DBMill:DB$ SacrificeAll | ValidCards$ Creature.Rat+YouCtrl | RememberSacrificed$ True | SubAbility$ DBMillEffect | SpellDescription$ Sacrifice all Rats you control, then target player mills a number of cards equal to the number of Rats sacrificed this way.
+SVar:DBMillEffect:DB$ Mill | ValidTgts$ Player | NumCards$ X
+SVar:DBPutCounter:DB$ SacrificeAll | ValidCards$ Creature.Rat+YouCtrl | RememberSacrificed$ True | SubAbility$ DBPutCounterEffect | SpellDescription$ Sacrifice all Rats you control, then put that many -1/-1 counters on target creature.
+SVar:DBPutCounterEffect:DB$ PutCounter | ValidTgts$ Creature | CounterType$ M1M1 | CounterNum$ X
+SVar:DBMana:DB$ SacrificeAll | ValidCards$ Creature.Rat+YouCtrl | RememberSacrificed$ True | SubAbility$ DBManaEffect | SpellDescription$ Sacrifice all Rats you control, then add an amount of {B} equal to half that many, rounded up.
+SVar:DBManaEffect:DB$ Mana | Produced$ B | Amount$ XHalf
+SVar:X:Remembered$Amount
+SVar:XHalf:SVar$X/HalfUp
+DeckHas:Ability$Counters|Token
+Oracle:When CARDNAME enters, create a number of 0/1 black Rat creature tokens equal to the number of lands you control.\nWhenever another nontoken creature enters the battlefield, sacrifice CARDNAME.\nWhen CARDNAME dies, sacrifice all Rats you control, then choose one —\n• Target player mills a number of cards equal to the number of Rats sacrificed this way.\n• Put that many -1/-1 counters on target creature.\n• Add an amount of {B} equal to half that many, rounded up.

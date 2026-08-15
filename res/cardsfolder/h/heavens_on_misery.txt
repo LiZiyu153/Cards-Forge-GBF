@@ -1,0 +1,8 @@
+Name:Heavens on Misery
+ManaCost:1 B R
+Types:Instant
+A:SP$ GenericChoice | ValidTgts$ Player | Choices$ DBSacLand,DBLoseSearch | ChoicePrompt$ Choose one — | SpellDescription$ Target player chooses one — Sacrifice a land, or lose 2 life and search for a Mountain card.
+SVar:DBSacLand:DB$ Sacrifice | Defined$ Targeted | SacValid$ Land | Amount$ 1 | SpellDescription$ Sacrifice a land.
+SVar:DBLoseSearch:DB$ LoseLife | Defined$ Targeted | LifeAmount$ 2 | SubAbility$ DBSearch | SpellDescription$ Lose 2 life, then search your library for a Mountain card, put it onto the battlefield, then shuffle.
+SVar:DBSearch:DB$ ChangeZone | Origin$ Library | Destination$ Battlefield | ChangeType$ Mountain | Chooser$ Targeted | Shuffle$ True
+Oracle:Target player chooses one —\n• Sacrifice a land.\n• Lose 2 life, then search your library for a Mountain card, put it onto the battlefield, then shuffle.

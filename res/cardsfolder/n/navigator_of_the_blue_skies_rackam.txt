@@ -1,0 +1,8 @@
+Name:Navigator of the Blue Skies,Rackam
+ManaCost:G
+Types:Legendary Creature Human
+PT:0/1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigPump | TriggerDescription$ When CARDNAME enters, target creature you control gains vigilance until end of turn.
+SVar:TrigPump:DB$ Pump | ValidTgts$ Creature.YouCtrl | KW$ Vigilance
+A:AB$ ChangeZone | Cost$ T Sac<1/CARDNAME> | Origin$ Library | Destination$ Battlefield | Tapped$ True | ChangeType$ Forest.Basic | Shuffle$ True | SpellDescription$ Search your library for a basic Forest card, put it onto the battlefield tapped, then shuffle.
+Oracle:When Rackam enters, target creature you control gains vigilance until end of turn.\n{T}, Sacrifice Rackam: Search your library for a basic Forest card, put it onto the battlefield tapped, then shuffle.

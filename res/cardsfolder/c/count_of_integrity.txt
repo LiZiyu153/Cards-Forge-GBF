@@ -1,0 +1,8 @@
+Name:Count of Integrity
+ManaCost:1 W
+Types:Creature Human
+PT:1/3
+K:First Strike
+S:Mode$ Continuous | Affected$ Creature.YouCtrl | CheckSVar$ X | SVarCompare$ GE1 | AddKeyword$ Ward:PayLife<2> | Description$ As long as you control a legendary creature, creatures you control have ward—Pay 2 life.
+SVar:X:Count$Valid Creature.Legendary+YouCtrl
+Oracle:First strike\nAs long as you control a legendary creature, creatures you control have ward—Pay 2 life.

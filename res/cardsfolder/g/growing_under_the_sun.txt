@@ -1,0 +1,8 @@
+Name:Growing Under the Sun
+ManaCost:W
+Types:Sorcery
+S:Mode$ RaiseCost | ValidCard$ Card.Self | Type$ Spell | Cost$ Discard<1/Plains> | EffectZone$ All | CheckSVar$ Y | SVarCompare$ EQ0 | Description$ As an additional cost to cast this spell, discard a Plains card. If a Plains entered the battlefield under your control this turn, you don't need to discard.
+SVar:Y:Count$ThisTurnEntered_Battlefield_Plains.YouCtrl
+A:SP$ Token | TokenAmount$ 1 | TokenScript$ w_2_2_sunflower_lifelink_plant_elemental
+DeckHas:Ability$Token
+Oracle:As an additional cost to cast this spell, discard a Plains card. If a Plains entered the battlefield under your control this turn, you don't need to discard.\nCreate a 2/2 white Sunflower creature token with lifelink. It has the Plant and Elemental creature types.

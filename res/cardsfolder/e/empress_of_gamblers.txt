@@ -1,0 +1,9 @@
+Name:Empress of Gamblers
+ManaCost:U
+Types:Creature Human
+PT:1/2
+A:AB$ FlipCoin | Cost$ 2 T | WinSubAbility$ DBDraw | LoseSubAbility$ DBTreasure | SpellDescription$ {2}{T}: Flip a coin. If you win the flip, draw a card. Otherwise, create a Treasure token.
+SVar:DBDraw:DB$ Draw
+SVar:DBTreasure:DB$ Token | TokenScript$ c_a_treasure_sac
+DeckHas:Ability$Token
+Oracle:{2}{T}: Flip a coin. If you win the flip, draw a card. If you lose the flip, create a Treasure token.

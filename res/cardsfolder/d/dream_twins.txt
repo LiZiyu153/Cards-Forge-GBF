@@ -1,0 +1,11 @@
+Name:Dream Twins
+ManaCost:W U
+Types:Creature Tapir
+PT:0/1
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigStun | TriggerDescription$ When CARDNAME enters and at the beginning of your upkeep, put one stun counters on target creature you don't control. Then if that creature has three or more stun counters on it, exile it.
+SVar:TrigStun:DB$ PutCounter | ValidTgts$ Creature.!YouCtrl | CounterType$ Stun | CounterNum$ 1 | SubAbility$ DBExileCheck
+SVar:DBExileCheck:DB$ Branch | BranchConditionSVar$ X | BranchConditionSVarCompare$ GE3 | TrueSubAbility$ DBExile
+SVar:DBExile:DB$ ChangeZone | Defined$ ParentTarget | Origin$ Battlefield | Destination$ Exile
+SVar:X:Targeted$CardCounters.Stun
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigStun | Secondary$ True
+Oracle:When Dream Twins enters and at the beginning of your upkeep, put one stun counters on target creature you don't control. Then if that creature has three or more stun counters on it, exile it.

@@ -1,0 +1,7 @@
+Name:Fleur Tourbillon
+ManaCost:1 G
+Types:Enchantment
+A:AB$ Mana | Cost$ T | Produced$ G | Amount$ 1 | SpellDescription$ Add {G}.
+A:AB$ Pump | Cost$ 4 G T | ValidTgts$ Creature.YouCtrl | NumAtt$ 3 | NumDef$ 3 | KW$ Trample | SpellDescription$ Target creature you control gets +3/+3 and gains trample until end of turn.
+DeckHas:Ability$Mana
+Oracle:{T}: Add {G}.\n{4}{G}{T}: Target creature you control gets +3/+3 and gains trample until end of turn.

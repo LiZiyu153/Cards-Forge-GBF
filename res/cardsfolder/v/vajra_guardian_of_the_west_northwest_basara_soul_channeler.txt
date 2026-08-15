@@ -1,0 +1,36 @@
+Name:Vajra,Guardian of the West-Northwest
+ManaCost:B B G G
+Types:Legendary Creature Erune God
+PT:2/3
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | TriggerZones$ Battlefield | Execute$ TrigToken | TriggerDescription$ When CARDNAME enters, create a 1/1 black Dog/Ally creature token with lifelink and deathtouch.
+SVar:TrigToken:DB$ Token | TokenAmount$ 1 | TokenScript$ b_1_1_dog_ally_lifelink_deathtouch | TokenOwner$ You
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Dog.YouCtrl | TriggerZones$ Battlefield | Execute$ TrigCounters | TriggerDescription$ Whenever a Dog enters the battlefield under your control, put two +1/+1 counters on it, then it fights target creature you don't control.
+SVar:TrigCounters:DB$ PutCounter | Defined$ TriggeredCard | CounterType$ P1P1 | CounterNum$ 2 | SubAbility$ DBFight
+SVar:DBFight:DB$ Fight | Defined$ TriggeredCardLKICopy | ValidTgts$ Creature.YouDontCtrl | TgtPrompt$ Choose target creature you don't control
+T:Mode$ AttackerBlockedByCreature | ValidCard$ Creature.powerGE3 | ValidBlocker$ Card.Self | TriggerZones$ Battlefield | Execute$ TrigTransform | TriggerDescription$ Whenever a creature with power greater than 2 blocks CARDNAME or is blocked by it, exile CARDNAME, then return it to the battlefield transformed under your control.
+T:Mode$ AttackerBlockedByCreature | ValidCard$ Card.Self | ValidBlocker$ Creature.powerGE3 | TriggerZones$ Battlefield | Execute$ TrigTransform | Secondary$ True | TriggerDescription$ Whenever a creature with power greater than 2 blocks CARDNAME or is blocked by it, exile CARDNAME, then return it to the battlefield transformed under your control.
+SVar:TrigTransform:DB$ ChangeZone | Origin$ Battlefield | Destination$ Exile | RememberChanged$ True | SubAbility$ DBReturn
+SVar:DBReturn:DB$ ChangeZone | Defined$ Remembered | Origin$ Exile | Destination$ Battlefield | Transformed$ True | GainControl$ True | SubAbility$ DBCleanup
+SVar:DBCleanup:DB$ Cleanup | ClearRemembered$ True
+DeckHas:Ability$Token|Counters|Fight & Type$Dog|Ally
+AlternateMode:DoubleFaced
+Oracle:When CARDNAME enters, create a 1/1 black Dog/Ally creature token with lifelink and deathtouch.\nWhenever a Dog enters the battlefield under your control, put two +1/+1 counters on it, then it fights target creature you don't control.\nWhenever a creature with power greater than 2 blocks CARDNAME or is blocked by it, exile CARDNAME, then return it to the battlefield transformed under your control.
+
+ALTERNATE
+
+Name:Basara,Soul Channeler
+ManaCost:no cost
+Colors:black,green
+Types:Legendary Planeswalker Basara
+Loyalty:4
+A:AB$ PutCounterAll | Cost$ AddCounter<2/LOYALTY> | Planeswalker$ True | ValidCards$ Dog.YouCtrl | CounterType$ P1P1 | CounterNum$ 2 | SpellDescription$ Put two +1/+1 counters on each Dog you control.
+A:AB$ Destroy | Cost$ AddCounter<1/LOYALTY> | Planeswalker$ True | ValidTgts$ Planeswalker | TgtPrompt$ Choose target planeswalker | SubAbility$ DBInvestigate | SpellDescription$ Destroy target planeswalker. Its controller investigates twice.
+SVar:DBInvestigate:DB$ Investigate | Num$ 2 | Defined$ TargetedController | StackDescription$ {p:TargetedController} investigates twice.
+A:AB$ Token | Cost$ AddCounter<0/LOYALTY> | Planeswalker$ True | TokenAmount$ 1 | TokenScript$ b_1_2_dog_ally_lifelink | TokenOwner$ You | SpellDescription$ Create a 1/2 black Dog/Ally creature token with lifelink.
+A:AB$ PutCounterAll | Cost$ SubCounter<5/LOYALTY> | Planeswalker$ True | Ultimate$ True | ValidCards$ Creature.YouCtrl | CounterType$ P1P1 | CounterNum$ X | RememberPut$ True | SubAbility$ DBImmediateTrig | SpellDescription$ Put a +1/+1 counter on each creature you control for each creature you don't control. Then for each creature you control, choose a target creature you don't control. Those creatures fight.
+SVar:X:Count$Valid Creature.YouDontCtrl
+SVar:DBImmediateTrig:DB$ ImmediateTrigger | TriggerAmount$ Remembered$Amount | RememberObjects$ Remembered | RememberEach$ True | Execute$ TrigFight | SubAbility$ DBCleanup2 | TriggerDescription$ For each creature you control, choose a target creature you don't control. Those creatures fight.
+SVar:TrigFight:DB$ Fight | Defined$ DelayTriggerRememberedLKI | ValidTgts$ Creature.YouDontCtrl | TgtPrompt$ Choose target creature you don't control
+SVar:DBCleanup2:DB$ Cleanup | ClearRemembered$ True
+DeckHas:Ability$Token|Counters|Investigate|Fight & Type$Dog|Ally|Clue
+Oracle:[+2]: Put two +1/+1 counters on each Dog you control.\n[+1]: Destroy target planeswalker. Its controller investigates twice.\n[0]: Create a 1/2 black Dog/Ally creature token with lifelink.\n[-5]: Put a +1/+1 counter on each creature you control for each creature you don't control. Then for each creature you control, choose a target creature you don't control. Those creatures fight.

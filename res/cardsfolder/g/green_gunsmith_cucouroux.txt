@@ -1,0 +1,9 @@
+Name:Green Gunsmith, Cucouroux
+ManaCost:R
+Types:Legendary Creature Human
+PT:1/2
+T:Mode$ SpellCast | ValidCard$ Instant.YouOwn+Red,Sorcery.YouOwn+Red | TriggerZones$ Battlefield | OptionalDecider$ You | Execute$ TrigDealDamage | TriggerDescription$ Whenever you cast a red instant or sorcery spell, you may pay {X}. If you do, CARDNAME deals X damage to target creature or player.
+SVar:TrigDealDamage:AB$ DealDamage | Cost$ X | ValidTgts$ Creature,Player | NumDmg$ X | SpellDescription$ You may pay {X}. If you do, CARDNAME deals X damage to target creature or player.
+SVar:X:Count$xPaid
+DeckHas:Ability$Counters
+Oracle:Whenever you cast a red instant or sorcery spell, you may pay {X}. If you do, Green Gunsmith, Cucouroux deals X damage to target creature or player.

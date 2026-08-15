@@ -1,0 +1,5 @@
+Name:Beastly Iron Ball
+ManaCost:1 B
+Types:Sorcery
+A:SP$ PutCounter | ValidTgts$ Creature | TargetMin$ 3 | TargetMax$ 3 | CounterType$ M1M1 | CounterNum$ 1
+Oracle:Put a -1/-1 counter on each of up to three target creatures.

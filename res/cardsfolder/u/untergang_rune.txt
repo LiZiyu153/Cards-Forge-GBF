@@ -1,0 +1,6 @@
+Name:Untergang Rune
+ManaCost:2 B
+Types:Sorcery
+K:Delve
+A:SP$ Destroy | ValidTgts$ Enchantment
+Oracle:Delve (You may exile any number of cards from your graveyard as you cast this spell. It costs {1} less to cast for each card exiled this way.)\nDestroy target enchantment.

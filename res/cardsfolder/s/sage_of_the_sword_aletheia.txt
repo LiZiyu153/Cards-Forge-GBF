@@ -1,0 +1,10 @@
+Name:Sage of the Sword,Aletheia
+ManaCost:6 B G
+Types:Legendary Creature Human
+PT:5/5
+K:Trample
+K:Menace
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigDestroyDraw | TriggerDescription$ When CARDNAME enters, destroy target creature. Draw a card.
+SVar:TrigDestroyDraw:DB$ Destroy | ValidTgts$ Creature | SubAbility$ DBDraw
+SVar:DBDraw:DB$ Draw
+Oracle:Trample, menace\nWhen Aletheia enters, destroy target creature. Draw a card.

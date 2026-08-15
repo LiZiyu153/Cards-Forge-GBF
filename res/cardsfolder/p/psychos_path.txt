@@ -1,0 +1,6 @@
+Name:Psycho's Path
+ManaCost:1 R B
+Types:Sorcery
+A:SP$ Destroy | Cost$ Sac<1/Artifact> | ValidTgts$ Creature | RememberDestroyed$ True | SubAbility$ DBDestroyAll
+SVar:DBDestroyAll:DB$ DestroyAll | ConditionDefined$ Remembered | ConditionPresent$ Artifact.Creature | ValidCards$ Artifact
+Oracle:As an additional cost to cast this spell, sacrifice an artifact.\nDestroy target creature. If an artifact creature was destroyed this way, destroy all artifacts.

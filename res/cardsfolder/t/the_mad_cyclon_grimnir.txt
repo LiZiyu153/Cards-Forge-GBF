@@ -1,0 +1,12 @@
+Name:The Mad Cyclon,Grimnir
+ManaCost:5 G G G
+Types:Legendary Creature Primal
+PT:3/5
+S:Mode$ ReduceCost | ValidCard$ Card.Self | Type$ Spell | Amount$ X | EffectZone$ All | Description$ CARDNAME costs {1} less to cast for each green Primal creature you control.
+SVar:X:Count$Valid Creature.Primal+Green+YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigChoice | TriggerDescription$ When CARDNAME enters, choose one —\n• Put a flying counter on each creature you control.\n• Destroy all creatures with flying.
+SVar:TrigChoice:DB$ GenericChoice | Defined$ You | Choices$ DBFlying,DBDestroyFlyers | ChoicePrompt$ Choose one — | SpellDescription$ When CARDNAME enters, choose one — Put a flying counter on each creature you control, or destroy all creatures with flying.
+SVar:DBFlying:DB$ PutCounterAll | ValidCards$ Creature.YouCtrl | CounterType$ Flying | CounterNum$ 1 | SpellDescription$ Put a flying counter on each creature you control.
+SVar:DBDestroyFlyers:DB$ DestroyAll | ValidCards$ Creature.withFlying | SpellDescription$ Destroy all creatures with flying.
+DeckHas:Ability$Counters
+Oracle:The Mad Cyclon, Grimnir costs {1} less to cast for each green Primal creature you control.\nWhen Grimnir enters, choose one —\n• Put a flying counter on each creature you control.\n• Destroy all creatures with flying.

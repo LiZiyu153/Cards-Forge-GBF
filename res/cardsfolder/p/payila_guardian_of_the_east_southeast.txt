@@ -1,0 +1,15 @@
+Name:Payila,Guardian of the East-Southeast
+ManaCost:B B R R
+Rarity:R
+Types:Legendary Creature Draph God
+PT:3/4
+K:Haste
+K:Ascend
+A:AB$ Token | Cost$ T | TokenAmount$ 1 | TokenScript$ c_a_treasure_sac | TokenOwner$ You | SpellDescription$ Create a Treasure token.
+A:AB$ Token | Cost$ 2 B T Sac<2/Treasure> | ValidTgts$ Permanent | TgtPrompt$ Choose target permanent | TokenAmount$ 2 | TokenScript$ c_a_treasure_sac | TokenOwner$ TargetedController | SubAbility$ DBGainControl | SpellDescription$ Gain control of target permanent. Its original controller creates two Treasure tokens.
+SVar:DBGainControl:DB$ GainControl | Defined$ Targeted
+S:Mode$ Continuous | Affected$ Card.Self | Condition$ Blessing | AddReplacementEffect$ ExtraToken | Description$ If you have the city's blessing and would create one or more Treasure tokens, you create that many plus one instead.
+SVar:ExtraToken:Event$ CreateToken | ActiveZones$ Battlefield | ValidPlayer$ You | ValidToken$ Treasure | ReplaceWith$ DBReplace | Description$ If you have the city's blessing and would create one or more Treasure tokens, you create that many plus one instead.
+SVar:DBReplace:DB$ ReplaceToken | Type$ AddToken | Amount$ 1 | TokenScript$ c_a_treasure_sac
+DeckHas:Ability$Token & Type$Treasure
+Oracle:Haste, ascend (If you control ten or more permanents, you get the city's blessing for the rest of the game.)\n{T}: Create a Treasure token.\n{2}{B}{T}, Sacrifice two Treasures: Gain control of target permanent. Its original controller creates two Treasure tokens.\nIf you have the city's blessing and would create one or more Treasure tokens, you create that many plus one instead.

@@ -1,0 +1,12 @@
+Name:Indala,Guardian of the South-Southeast
+ManaCost:W R R
+Rarity:R
+Types:Legendary Creature Human God
+PT:3/2
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ Player | TriggerZones$ Battlefield | Execute$ TrigCharm | OptionalDecider$ You | TriggerDescription$ At the beginning of each player's upkeep, you may pay {2}. If you do, choose one — Red creatures and white creatures you control gain hexproof, haste, menace, or lifelink until end of turn.
+SVar:TrigCharm:AB$ Charm | Cost$ 2 | Choices$ DBHexproof,DBHaste,DBMenace,DBLifelink
+SVar:DBHexproof:DB$ PumpAll | ValidCards$ Creature.Red+YouCtrl,Creature.White+YouCtrl | KW$ Hexproof | SpellDescription$ Red creatures and white creatures you control gain hexproof until end of turn.
+SVar:DBHaste:DB$ PumpAll | ValidCards$ Creature.Red+YouCtrl,Creature.White+YouCtrl | KW$ Haste | SpellDescription$ Red creatures and white creatures you control gain haste until end of turn.
+SVar:DBMenace:DB$ PumpAll | ValidCards$ Creature.Red+YouCtrl,Creature.White+YouCtrl | KW$ Menace | SpellDescription$ Red creatures and white creatures you control gain menace until end of turn.
+SVar:DBLifelink:DB$ PumpAll | ValidCards$ Creature.Red+YouCtrl,Creature.White+YouCtrl | KW$ Lifelink | SpellDescription$ Red creatures and white creatures you control gain lifelink until end of turn.
+Oracle:At the beginning of each player's upkeep, you may pay {2}. If you do, choose one —\n• Red creatures and white creatures you control gain hexproof until end of turn.\n• Red creatures and white creatures you control gain haste until end of turn.\n• Red creatures and white creatures you control gain menace until end of turn.\n• Red creatures and white creatures you control gain lifelink until end of turn.

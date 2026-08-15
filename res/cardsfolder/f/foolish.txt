@@ -1,0 +1,9 @@
+Name:Foolish
+ManaCost:1 U
+Types:Enchantment Saga
+K:Chapter:3:DBI,DBII,DBIII
+SVar:DBI:DB$ Scry | ScryNum$ 2 | SpellDescription$ I — Scry 2.
+SVar:DBII:DB$ Draw | NumCards$ 3 | SubAbility$ DBDiscard | SpellDescription$ II — Draw three cards, then discard two cards.
+SVar:DBDiscard:DB$ Discard | Defined$ You | Mode$ TgtChoose | NumCards$ 2
+SVar:DBIII:DB$ ChangeZone | Origin$ Library | Destination$ Hand | ChangeType$ Card.nonCreature | Shuffle$ True | SpellDescription$ III — Search your library for a noncreature card, reveal it, and put it into your hand, then shuffle.
+Oracle:(As this Saga enters and after your draw step, add a lore counter. At III, sacrifice it.)\nI — Scry 2.\nII — Draw three cards, then discard two cards.\nIII — Search your library for a noncreature card, reveal it, and put it into your hand, then shuffle.

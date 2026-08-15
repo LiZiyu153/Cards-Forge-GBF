@@ -1,0 +1,19 @@
+Name:Dancer of the Sun,Anthuria
+ManaCost:W U G
+Types:Legendary Creature Erune
+PT:1/1
+K:Flash
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigBounce | TriggerDescription$ When CARDNAME enters, choose target creature you control and target creature you don't control. Return those creatures to their owners' hands. Then put a number of +0/+1 counters on CARDNAME equal to the difference in their mana values.
+SVar:TrigBounce:DB$ ChangeZone | ValidTgts$ Creature.YouCtrl | Origin$ Battlefield | Destination$ Hand | RememberChanged$ True | SubAbility$ DBBounceOther
+SVar:DBBounceOther:DB$ ChangeZone | ValidTgts$ Creature.!YouCtrl | Origin$ Battlefield | Destination$ Hand | RememberChanged$ True | SubAbility$ DBPutDiff
+SVar:DBPutDiff:DB$ PutCounter | Defined$ Self | CounterType$ P0P1 | CounterNum$ X
+SVar:MaxMV:Count$ValidAll Card.IsRemembered$GreatestCardManaCost
+SVar:MinMV:Count$ValidAll Card.IsRemembered$LeastCardManaCost
+SVar:X:Count$SVar$MaxMV/Minus.SVar$MinMV
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Creature.Other+YouCtrl | TriggerZones$ Battlefield | Execute$ TrigSacDraw | TriggerDescription$ Whenever another creature enters under your control, sacrifice CARDNAME, draw a card, then create a number of 1/1 white Erune creature tokens equal to the number of +0/+1 counters on CARDNAME.
+SVar:TrigSacDraw:DB$ Sacrifice | Defined$ Self | SubAbility$ DBDrawTokens
+SVar:DBDrawTokens:DB$ Draw | SubAbility$ DBToken
+SVar:DBToken:DB$ Token | TokenAmount$ Y | TokenScript$ w_1_1_erune
+SVar:Y:Count$CardCounters.P0P1
+DeckHas:Ability$Token|Counters
+Oracle:Flash\nWhen Anthuria enters, choose target creature you control and target creature you don't control. Return those creatures to their owners' hands. Then put a number of +0/+1 counters on Anthuria equal to the difference in their mana values.\nWhenever another creature enters under your control, sacrifice Anthuria, draw a card, then create a number of 1/1 white Erune creature tokens equal to the number of +0/+1 counters on Anthuria.

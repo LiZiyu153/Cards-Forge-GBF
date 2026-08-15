@@ -1,0 +1,7 @@
+Name:Le Jardin de Fleurs
+ManaCost:G G
+Types:Enchantment
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Creature.YouCtrl | TriggerZones$ Battlefield | ResolvedLimit$ 2 | Execute$ TrigToken | TriggerDescription$ Whenever a creature you control dies, create a Spirit Blossom token, a 1/1 green enchantment creature with the Plant and Elemental creature types. This ability triggers only twice each turn.
+SVar:TrigToken:DB$ Token | TokenScript$ g_1_1_spirit_blossom_plant_elemental
+DeckHas:Ability$Token
+Oracle:Whenever a creature you control dies, create a Spirit Blossom token, a 1/1 green enchantment creature with the Plant and Elemental creature types. This ability triggers only twice each turn.

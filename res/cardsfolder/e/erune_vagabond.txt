@@ -1,0 +1,9 @@
+Name:Erune Vagabond
+ManaCost:1 W
+Types:Creature Erune
+PT:2/2
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | CheckSVar$ X | SVarCompare$ GE1 | Execute$ TrigBird | TriggerDescription$ When CARDNAME enters, if you control another Erune, create a 2/2 white Bird creature token with flying.
+SVar:TrigBird:DB$ Token | TokenScript$ w_2_2_bird_flying
+SVar:X:Count$Valid Creature.Erune+Other+YouCtrl
+DeckHas:Ability$Token
+Oracle:When Erune Vagabond enters, if you control another Erune, create a 2/2 white Bird creature token with flying.

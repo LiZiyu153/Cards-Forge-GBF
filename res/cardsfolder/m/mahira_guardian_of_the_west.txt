@@ -1,0 +1,9 @@
+Name:Mahira,Guardian of the West
+ManaCost:W W W
+Types:Legendary Creature Harvin Bird God
+PT:1/5
+S:Mode$ Continuous | Affected$ Creature.Artifact+YouCtrl | AddPower$ 1 | AddToughness$ 1 | Description$ Artifact creatures you control get +1/+1.
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigToken | TriggerDescription$ At the beginning of your upkeep, create a 0/0 colorless Construct artifact creature token with flying and "When this creature enters the battlefield, put a +1/+1 counter on it for each other artifact creature you control."
+SVar:TrigToken:DB$ Token | TokenAmount$ 1 | TokenScript$ c_0_0_a_construct_flying_artifactcount | TokenOwner$ You
+DeckHas:Ability$Token
+Oracle:Artifact creatures you control get +1/+1.\nAt the beginning of your upkeep, create a 0/0 colorless Construct artifact creature token with flying and "When this creature enters the battlefield, put a +1/+1 counter on it for each other artifact creature you control."

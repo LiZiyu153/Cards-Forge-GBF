@@ -1,0 +1,7 @@
+Name:Veteran of Crushing Fists
+ManaCost:1 W
+Types:Creature Human
+PT:2/2
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Land.YouCtrl | TriggerZones$ Battlefield | Execute$ TrigPump | TriggerDescription$ Landfall — Whenever a land enters under your control, CARDNAME gets +1/+1 until end of turn.
+SVar:TrigPump:DB$ Pump | Defined$ Self | NumAtt$ 1 | NumDef$ 1
+Oracle:Landfall — Whenever a land enters under your control, Veteran of Crushing Fists gets +1/+1 until end of turn.

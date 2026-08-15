@@ -1,0 +1,7 @@
+Name:Sand Wall
+ManaCost:2 W
+Types:Enchantment
+A:AB$ ChooseColor | Cost$ 3 W T | Defined$ You | SubAbility$ DBEffect | SpellDescription$ Choose a color. You and creatures you control prevent all damage from sources of the chosen color until end of turn.
+SVar:DBEffect:DB$ Effect | ReplacementEffects$ Prevent | SpellDescription$ You and creatures you control prevent all damage from sources of the chosen color until end of turn.
+SVar:Prevent:Event$ DamageDone | Prevent$ True | ValidTarget$ You,Creature.YouCtrl | ValidSource$ Card.ChosenColor | Description$ Prevent all damage that would be dealt to you and creatures you control by sources of the chosen color.
+Oracle:{3}{W}{T}: Choose a color. You and creatures you control prevent all damage from sources of the chosen color until end of turn.

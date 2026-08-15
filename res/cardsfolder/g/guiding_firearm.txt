@@ -1,0 +1,9 @@
+Name:Guiding Firearm
+ManaCost:2 R
+Types:Instant
+K:Flashback:3 R
+A:SP$ Charm | Choices$ DBDealDamage,DBPumpAll | SpellDescription$ Choose one —\n• CARDNAME deals damage to target creature equal to the total power of creatures you control.\n• Creatures you control get +2/+0 until end of turn.
+SVar:DBDealDamage:DB$ DealDamage | ValidTgts$ Creature | NumDmg$ X | SpellDescription$ CARDNAME deals damage to target creature equal to the total power of creatures you control.
+SVar:DBPumpAll:DB$ PumpAll | ValidCards$ Creature.YouCtrl | NumAtt$ 2 | SpellDescription$ Creatures you control get +2/+0 until end of turn.
+SVar:X:Count$ValidBattlefield Creature.YouCtrl$CardPower
+Oracle:Choose one —\n• Guiding Firearm deals damage to target creature equal to the total power of creatures you control.\n• Creatures you control get +2/+0 until end of turn.\nFlashback {3}{R}

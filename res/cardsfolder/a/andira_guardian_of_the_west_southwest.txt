@@ -1,0 +1,26 @@
+Name:Andira,Guardian of the West-Southwest
+ManaCost:U U B B
+Types:Legendary Creature Erune Monkey God
+PT:3/3
+K:Flying
+K:Ninjutsu:1 U B
+AlternateMode:Prepare
+K:ETBReplacement:Other:DBPrepare
+SVar:DBPrepare:DB$ AlterAttribute | Attributes$ Prepared | SpellDescription$ This creature enters prepared. (While it's prepared, you may cast a copy of the attached spell. Doing so unprepares it.)
+S:Mode$ Continuous | Affected$ Creature.Legendary+YouOwn | AffectedZone$ Hand | AddKeyword$ Ninjutsu:2 U B | Description$ Each legendary creature card in your hand has ninjutsu {2}{U}{B}.
+Oracle:Flying\nNinjutsu {1}{U}{B} ({1}{U}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nCARDNAME enters prepared. (While it's prepared, you may cast a copy of the attached spell. Doing so unprepares it.)\nEach legendary creature card in your hand has ninjutsu {2}{U}{B}.\n\nInfinite Monkey Hands: Baboon Blast {2}{U}{B} — Target player reveals their hand. You choose a creature card and a noncreature card from it. If you do, you may cast one of those two cards without paying its mana cost. Then discard the unused ones.
+
+ALTERNATE
+
+Name:Infinite Monkey Hands: Baboon Blast
+ManaCost:2 U B
+Types:Instant
+A:SP$ RevealHand | ValidTgts$ Player | SubAbility$ DBChooseCreature | SpellDescription$ Target player reveals their hand. You choose a creature card and a noncreature card from it. If you do, you may cast one of those two cards without paying its mana cost. Then discard the unused ones.
+SVar:DBChooseCreature:DB$ ChooseCard | Defined$ You | ChoiceZone$ Hand | Choices$ Card.Creature+OwnedBy Targeted | Amount$ 1 | MinAmount$ 0 | RememberChosen$ True | SubAbility$ DBChooseNonCreature
+SVar:DBChooseNonCreature:DB$ ChooseCard | Defined$ You | ChoiceZone$ Hand | Choices$ Card.nonCreature+OwnedBy Targeted | Amount$ 1 | MinAmount$ 0 | RememberChosen$ True | SubAbility$ DBBranch
+SVar:DBBranch:DB$ Branch | BranchConditionSVar$ ChosenCount | BranchConditionSVarCompare$ EQ2 | TrueSubAbility$ DBPlay
+SVar:ChosenCount:Remembered$Amount
+SVar:DBPlay:DB$ Play | Defined$ Remembered | WithoutManaCost$ True | Optional$ True | SubAbility$ DBDiscard
+SVar:DBDiscard:DB$ Discard | Defined$ Targeted | Mode$ RevealDiscardAll | DiscardValid$ Card.IsRemembered | SubAbility$ DBCleanup
+SVar:DBCleanup:DB$ Cleanup | ClearRemembered$ True
+Oracle:Target player reveals their hand. You choose a creature card and a noncreature card from it. If you do, you may cast one of those two cards without paying its mana cost. Then discard the unused ones.

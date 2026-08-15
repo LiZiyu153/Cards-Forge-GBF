@@ -1,0 +1,14 @@
+Name:Hadean Watchdog,Cerberus
+ManaCost:2 B G G
+Types:Legendary Creature Primal Demon
+PT:3/2
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self+wasCast | Execute$ TrigETB | TriggerDescription$ When CARDNAME enters, if you cast it, sacrifice two creatures you control. If you do, search your library for two land cards, put them onto the battlefield, then shuffle. They become 1/1 black Primal Dog creature tokens. They're still lands.
+SVar:TrigETB:DB$ Sacrifice | Defined$ You | SacValid$ Creature.YouCtrl | Amount$ 2 | RememberSacrificed$ True | SubAbility$ DBCheck
+SVar:DBCheck:DB$ Branch | BranchConditionSVar$ N | BranchConditionSVarCompare$ GE2 | TrueSubAbility$ DBSearchLands
+SVar:DBSearchLands:DB$ ChangeZone | Origin$ Library | Destination$ Battlefield | ChangeType$ Land | ChangeNum$ 2 | RememberChanged$ True | Shuffle$ True | SubAbility$ DBAnimate
+SVar:DBAnimate:DB$ Animate | Defined$ Remembered | Power$ 1 | Toughness$ 1 | Types$ Primal,Dog,Creature,Land | Colors$ Black | Duration$ Permanent
+SVar:N:Remembered$Amount
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Card.Self | Execute$ TrigToken | TriggerDescription$ When CARDNAME dies, create a Cerberus enchantment token with "{T}: Two target lands you control become 1/1 black Primal Dog creature tokens. They're still lands."
+SVar:TrigToken:DB$ Token | TokenScript$ cerberus_enchantment
+DeckHas:Ability$Token
+Oracle:When Cerberus enters, if you cast it, sacrifice two creatures you control. If you do, search your library for two land cards, put them onto the battlefield, then shuffle. They become 1/1 black Primal Dog creature tokens. They're still lands.\nWhen Cerberus dies, create a Cerberus enchantment token with "{T}: Two target lands you control become 1/1 black Primal Dog creature tokens. They're still lands."

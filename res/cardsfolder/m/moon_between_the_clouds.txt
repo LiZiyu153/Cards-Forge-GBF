@@ -1,0 +1,8 @@
+Name:Moon Between the Clouds
+ManaCost:1 R U
+Types:Enchantment Aura
+K:Enchant:Creature
+A:SP$ Attach | ValidTgts$ Creature | AILogic$ Curse
+S:Mode$ Continuous | Affected$ Creature.EnchantedBy | AddKeyword$ CARDNAME can't attack or block. & T:Add{R} | Description$ Enchanted creature can't attack or block and has "{T}: Add {R}."
+SVar:AttachAILogic:Curse
+Oracle:Enchant creature\nEnchanted creature can't attack or block and has "{T}: Add {R}."

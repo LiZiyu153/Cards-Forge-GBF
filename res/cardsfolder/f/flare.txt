@@ -1,0 +1,7 @@
+Name:Flare
+ManaCost:1 W R
+Types:Enchantment
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigPump | TriggerDescription$ At the beginning of your upkeep, creatures you control get +2/-1 until end of turn and untapped creatures you don't control get -1/-1 until end of turn.
+SVar:TrigPump:DB$ PumpAll | ValidCards$ Creature.YouCtrl | NumAtt$ 2 | NumDef$ -1 | SubAbility$ DBOppPump
+SVar:DBOppPump:DB$ PumpAll | ValidCards$ Creature.OppCtrl+untapped | NumAtt$ -1 | NumDef$ -1
+Oracle:At the beginning of your upkeep, creatures you control get +2/-1 until end of turn and untapped creatures you don't control get -1/-1 until end of turn.

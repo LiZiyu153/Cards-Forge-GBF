@@ -1,0 +1,14 @@
+Name:Soothing Minstrel,Arriet
+ManaCost:W G
+Types:Legendary Creature Human
+PT:0/1
+T:Mode$ LifeGained | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigChoice | TriggerDescription$ Whenever you gain life, choose one —\n• Put a +1/+1 counter on another target creature you control.\n• Put a +1/+0 counter on one target creature and a +0/+1 counter on another target creature you control.
+SVar:TrigChoice:DB$ Charm | Choices$ DBPutP1P1,DBPutSplit
+SVar:DBPutP1P1:DB$ PutCounter | ValidTgts$ Creature.Other+YouCtrl | CounterType$ P1P1 | CounterNum$ 1 | SpellDescription$ Put a +1/+1 counter on another target creature you control.
+SVar:DBPutSplit:DB$ PutCounter | ValidTgts$ Creature.Other+YouCtrl | TgtPrompt$ Select target creature to put a +1/+0 counter on | CounterType$ P1P0 | CounterNum$ 1 | RememberTargets$ True | SubAbility$ DBPutP0P1 | SpellDescription$ Put a +1/+0 counter on one target creature and a +0/+1 counter on another target creature you control.
+SVar:DBPutP0P1:DB$ PutCounter | Choices$ Creature.Other+YouCtrl+!IsRemembered | ChoiceTitle$ Select another target creature to put a +0/+1 counter on | CounterType$ P0P1 | CounterNum$ 1 | ChoiceAmount$ 1 | SubAbility$ DBCleanup
+SVar:DBCleanup:DB$ Cleanup | ClearRemembered$ True
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigToken | TriggerDescription$ When CARDNAME enters, create a Cords of Heaven Lyre artifact token with "At the beginning of your end step, if your life total is less than or equal to your starting life total, you gain 1 life. Otherwise, draw a card. You may pay {2} to do both."
+SVar:TrigToken:DB$ Token | TokenScript$ cords_of_heaven_lyre
+DeckHas:Ability$Token|Counters
+Oracle:Whenever you gain life, choose one —\n• Put a +1/+1 counter on another target creature you control.\n• Put a +1/+0 counter on one target creature and a +0/+1 counter on another target creature you control.\nWhen Arriet enters, create a Cords of Heaven Lyre artifact token with "At the beginning of your end step, if your life total is less than or equal to your starting life total, you gain 1 life. Otherwise, draw a card. You may pay {2} to do both."

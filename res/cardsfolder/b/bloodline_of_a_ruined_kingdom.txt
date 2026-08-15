@@ -1,0 +1,7 @@
+Name:Bloodline of a Ruined Kingdom
+ManaCost:1 W
+Types:Creature Erune
+PT:2/2
+A:AB$ Animate | Cost$ 3 W | ValidTgts$ Land.YouCtrl | Power$ 4 | Toughness$ 4 | Types$ Creature,Land | SpellDescription$ Target land you control becomes a 4/4 creature until end of turn. It's still a land.
+A:AB$ PumpAll | Cost$ 4 W | ValidCards$ Creature.YouCtrl | KW$ Vigilance | NumAtt$ 1 | NumDef$ 1 | SpellDescription$ Creatures you control get +1/+1 and gain vigilance until end of turn.
+Oracle:{3}{W}: Target land you control becomes a 4/4 creature until end of turn. It's still a land.\n{4}{W}: Creatures you control get +1/+1 and gain vigilance until end of turn.

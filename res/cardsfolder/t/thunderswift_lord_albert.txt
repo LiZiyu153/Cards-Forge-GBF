@@ -1,0 +1,13 @@
+Name:Thunderswift Lord,Albert
+ManaCost:5 W W W
+Types:Legendary Creature Human Knight
+PT:3/5
+K:Haste
+K:Double Strike
+S:Mode$ Continuous | Affected$ Card.Self | CheckSVar$ X | SVarCompare$ GE1 | AddKeyword$ Hexproof | Description$ As long as you control another Human, CARDNAME has hexproof and must attack each combat if able.
+SVar:X:Count$Valid Creature.Human+Other+YouCtrl
+S:Mode$ MustAttack | ValidCreature$ Card.Self | CheckSVar$ X | SVarCompare$ GE1 | Description$ As long as you control another Human, CARDNAME must attack each combat if able.
+T:Mode$ Phase | Phase$ Upkeep | ValidPlayer$ Opponent | TriggerZones$ Battlefield | CheckSVar$ TappedX | SVarCompare$ GE1 | Execute$ TrigDestroy | TriggerDescription$ At the beginning of each opponent's upkeep, if CARDNAME is tapped, destroy target artifact or enchantment.
+SVar:TrigDestroy:DB$ Destroy | ValidTgts$ Artifact,Enchantment
+SVar:TappedX:Count$Valid Card.Self+tapped
+Oracle:Haste, double strike\nAs long as you control another Human, Albert has hexproof and must attack each combat if able.\nAt the beginning of each opponent's upkeep, if Albert is tapped, destroy target artifact or enchantment.

@@ -1,0 +1,7 @@
+Name:Guardian of the Wind,Tiamat
+ManaCost:3 G
+Types:Legendary Creature Primal
+PT:3/4
+S:Mode$ Continuous | Affected$ Creature.Primal+Green+YouCtrl+powerLEZ | AddKeyword$ Indestructible | Description$ Green Primal creatures you control with power less than or equal to CARDNAME's power have indestructible.
+SVar:Z:Count$CardPower
+Oracle:Green Primal creatures you control with power less than or equal to Guardian of the Wind, Tiamat's power have indestructible.

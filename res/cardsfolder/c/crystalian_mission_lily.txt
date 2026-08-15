@@ -1,0 +1,21 @@
+Name:Crystalian Mission,Lily
+ManaCost:1 U G
+Types:Legendary Creature
+PT:1/2
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self | Execute$ TrigETB | TriggerDescription$ When CARDNAME enters, if you control two or fewer creatures, draw a card and put a +1/+1 counter on CARDNAME.
+SVar:TrigETB:DB$ Branch | BranchConditionSVar$ CRE | BranchConditionSVarCompare$ LE2 | TrueSubAbility$ DBDrawCounter
+SVar:DBDrawCounter:DB$ Draw | SubAbility$ DBPutP1P1
+SVar:DBPutP1P1:DB$ PutCounter | Defined$ Self | CounterType$ P1P1 | CounterNum$ 1
+SVar:CRE:Count$Valid Creature.YouCtrl
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Land.YouCtrl | TriggerZones$ Battlefield | Execute$ TrigLandfall | TriggerDescription$ Landfall — Whenever a land enters under your control, put a +1/+1 counter on CARDNAME.
+SVar:TrigLandfall:DB$ PutCounter | Defined$ Self | CounterType$ P1P1 | CounterNum$ 1
+T:Mode$ DamageDone | ValidTarget$ Creature.Other+YouCtrl | CombatDamage$ True | TriggerZones$ Battlefield | Execute$ TrigRedirect | TriggerDescription$ Whenever another creature you control is dealt combat damage, remove a +1/+1 counter from CARDNAME. If you do, put a +1/+1 counter on each other creature you control. If no counter was removed, sacrifice CARDNAME.
+SVar:TrigRedirect:DB$ Branch | BranchConditionSVar$ CNT | BranchConditionSVarCompare$ GE1 | TrueSubAbility$ DBRemoveAndSpread | FalseSubAbility$ DBSac
+SVar:DBRemoveAndSpread:DB$ RemoveCounter | Defined$ Self | CounterType$ P1P1 | CounterNum$ 1 | SubAbility$ DBPumpAll
+SVar:DBPumpAll:DB$ PutCounterAll | ValidCards$ Creature.Other+YouCtrl | CounterType$ P1P1 | CounterNum$ 1
+SVar:DBSac:DB$ Sacrifice | Defined$ Self
+SVar:CNT:Count$CardCounters.P1P1
+T:Mode$ ChangesZone | Origin$ Battlefield | Destination$ Graveyard | ValidCard$ Card.Self | Execute$ TrigDies | TriggerDescription$ When CARDNAME dies, target creature an opponent controls becomes 1/1.
+SVar:TrigDies:DB$ Animate | ValidTgts$ Creature.OppCtrl | Power$ 1 | Toughness$ 1 | RemoveAllAbilities$ True
+DeckHas:Ability$Counters
+Oracle:When Crystalian Mission, Lily enters, if you control two or fewer creatures, draw a card and put a +1/+1 counter on Lily.\nLandfall — Whenever a land enters under your control, put a +1/+1 counter on Lily.\nWhenever another creature you control is dealt combat damage, remove a +1/+1 counter from Lily. If you do, put a +1/+1 counter on each other creature you control. If no counter was removed, sacrifice Lily.\nWhen Lily dies, target creature an opponent controls becomes 1/1.

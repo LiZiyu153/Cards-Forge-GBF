@@ -1,0 +1,14 @@
+Name:Oracle Prodigy,Arulumaya
+ManaCost:1 W R
+Types:Legendary Creature Harvin
+PT:3/3
+K:Kicker:2
+T:Mode$ ChangesZone | Origin$ Any | Destination$ Battlefield | ValidCard$ Card.Self+wasCast | CheckSVar$ Kicked | SVarCompare$ GE1 | Execute$ TrigFlyCounter | TriggerDescription$ When CARDNAME enters, if it was kicked, put a flying counter on it.
+SVar:TrigFlyCounter:DB$ PutCounter | Defined$ Self | CounterType$ Flying | CounterNum$ 1
+SVar:Kicked:Count$Kicked.1.0
+S:Mode$ Continuous | Affected$ Card.Self | Condition$ PlayerTurn | AddReplacementEffect$ RPrevent | Description$ Prevent all damage that would be dealt to CARDNAME during your turn.
+SVar:RPrevent:Event$ DamageDone | Prevent$ True | ValidTarget$ Card.Self | Description$ Prevent all damage that would be dealt to CARDNAME.
+T:Mode$ DamageDone | ValidSource$ Card.Self | CombatDamage$ True | ValidTarget$ Player | Execute$ TrigManifest | TriggerDescription$ Whenever CARDNAME deals combat damage to a player, manifest the top two cards of your library.
+SVar:TrigManifest:DB$ Manifest | Amount$ 2
+DeckHas:Ability$Counters
+Oracle:Kicker {2}\nWhen Arulumaya enters, if it was kicked, put a flying counter on it.\nPrevent all damage that would be dealt to Arulumaya during your turn.\nWhenever Arulumaya deals combat damage to a player, manifest the top two cards of your library.

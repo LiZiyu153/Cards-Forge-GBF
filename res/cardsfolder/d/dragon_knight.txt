@@ -1,0 +1,8 @@
+Name:Dragon Knight
+ManaCost:1 W
+Types:Creature Human
+PT:2/2
+K:Trample
+S:Mode$ Continuous | Affected$ Dragon.YouCtrl | AddKeyword$ Ward:PayLife<2> | Description$ Dragons you control have ward—Pay 2 life.
+S:Mode$ Continuous | Affected$ Dragon.YouCtrl+blocking | AddPower$ 2 | AddToughness$ 0 | Description$ Dragons you control get +2/+0 when blocking.
+Oracle:Trample\nDragons you control have ward—Pay 2 life and get +2/+0 when blocking.

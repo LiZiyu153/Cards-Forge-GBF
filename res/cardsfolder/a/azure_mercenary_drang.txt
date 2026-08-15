@@ -1,0 +1,15 @@
+Name:Azure Mercenary,Drang
+ManaCost:1 W U
+Types:Legendary Creature Erune Warrior
+PT:3/2
+T:Mode$ Taps | ValidCard$ Card.Self | Execute$ TrigPutCounter | TriggerDescription$ When CARDNAME becomes tapped, put a lifelink counter on it.
+SVar:TrigPutCounter:DB$ PutCounter | Defined$ Self | CounterType$ Lifelink | CounterNum$ 1
+T:Mode$ SpellCast | ValidCard$ Instant.YouCtrl,Sorcery.YouCtrl | TriggerZones$ Battlefield | IsPresent$ Card.Self+counters_GE1_Lifelink | Execute$ TrigExchange | TriggerDescription$ Whenever you cast an instant or sorcery spell, if CARDNAME has a lifelink counter on it, remove a lifelink counter from CARDNAME and put a +0/+1 counter on it.
+SVar:TrigExchange:DB$ RemoveCounter | Defined$ Self | CounterType$ Lifelink | SubAbility$ DBPutToughness
+SVar:DBPutToughness:DB$ PutCounter | Defined$ Self | CounterType$ P0P1
+S:Mode$ ReduceCost | ValidCard$ Instant,Sorcery | Type$ Spell | Activator$ You | Amount$ Y | CheckSVar$ HasLifelink | SVarCompare$ GE1 | Description$ As long as CARDNAME has a lifelink counter on it, instant and sorcery spells you cast cost {Y} less to cast, where Y is CARDNAME's toughness.
+SVar:HasLifelink:Count$Valid Card.Self+counters_GE1_Lifelink
+SVar:Y:Count$CardToughness
+T:Mode$ DamageDone | ValidTarget$ Card.Self | Execute$ TrigUntap | TriggerDescription$ Whenever CARDNAME is dealt damage, untap it.
+SVar:TrigUntap:DB$ Untap | Defined$ Self
+Oracle:When CARDNAME becomes tapped, put a lifelink counter on it.\nWhenever you cast an instant or sorcery spell, remove a lifelink counter from CARDNAME and put a +0/+1 counter on it.\nAs long as CARDNAME has a lifelink counter on it, instant and sorcery spells you cast cost {Y} less to cast, where Y is CARDNAME's toughness.\nWhenever CARDNAME is dealt damage, untap it.

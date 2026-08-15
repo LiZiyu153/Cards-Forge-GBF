@@ -1,0 +1,10 @@
+Name:Burying Bullet
+ManaCost:2 B U
+Types:Instant
+A:SP$ Destroy | ValidTgts$ Creature.OppCtrl | RememberDestroyed$ True | SubAbility$ DBBranch | SpellDescription$ Destroy target creature an opponent controls.
+SVar:DBBranch:DB$ Branch | BranchConditionSVar$ X | BranchConditionSVarCompare$ GE1 | TrueSubAbility$ DBOppChoice
+SVar:DBOppChoice:DB$ GenericChoice | Defined$ Opponent | Choices$ DBDraw,DBDiscard | ChoicePrompt$ That opponent chooses one — | SpellDescription$ If that creature had menace or trample, that opponent chooses one — You draw a card, or that opponent discards a card.
+SVar:DBDraw:DB$ Draw | Defined$ You | SpellDescription$ You draw a card.
+SVar:DBDiscard:DB$ Discard | Defined$ Opponent | Mode$ TgtChoose | NumCards$ 1 | SpellDescription$ That opponent discards a card.
+SVar:X:Count$ValidGraveyard Card.IsRemembered+withMenace,Card.IsRemembered+withTrample
+Oracle:Destroy target creature an opponent controls. If that creature has menace or trample, that opponent chooses one —\n• You draw a card.\n• That opponent discards a card.

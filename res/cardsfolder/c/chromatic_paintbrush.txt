@@ -1,0 +1,11 @@
+Name:Chromatic Paintbrush
+ManaCost:3 U/R
+Rarity:R
+Types:Sorcery
+A:SP$ StoreSVar | SVar$ HandBefore | Type$ Count | Expression$ Count$ValidHand Card.YouOwn | SubAbility$ DBDigSIA
+SVar:DBDigSIA:DB$ Dig | DigNum$ 3 | Reveal$ True | ChangeNum$ 1 | ChangeValid$ Sorcery,Instant,Artifact | DestinationZone$ Hand | DestinationZone2$ Library | LibraryPosition2$ 0 | Optional$ True | SubAbility$ DBBranch
+SVar:DBBranch:DB$ Branch | BranchConditionSVar$ Picked | BranchConditionSVarCompare$ GE1 | TrueSubAbility$ DBPickCreature | FalseSubAbility$ DBElse
+SVar:DBPickCreature:DB$ Dig | DigNum$ 2 | Reveal$ True | ChangeNum$ 1 | ChangeValid$ Creature | DestinationZone$ Hand | DestinationZone2$ Library | LibraryPosition2$ -1 | Optional$ True | SpellDescription$ Pick one creature card from among the revealed cards and put it into your hand.
+SVar:DBElse:DB$ Dig | DigNum$ 3 | Reveal$ True | ChangeNum$ 1 | ChangeValid$ Card | DestinationZone$ Library | LibraryPosition$ 0 | DestinationZone2$ Graveyard
+SVar:Picked:Count$ValidHand Card.YouOwn/Minus.HandBefore
+Oracle:Reveal the top three cards of your library. If there is an instant, sorcery, or artifact card among them, you may put one instant, sorcery, or artifact card and one creature card from among them into your hand, and put the other card on the bottom of your library. Otherwise, put one card of your choice on top of your library and the rest into your graveyard.
