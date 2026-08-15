@@ -37,7 +37,7 @@
 | `res/cardsfolder/cardsfolder.zip` | Forge 官方卡牌脚本（随仓库分发，保证完整可玩） |
 | `res/tokenscripts/` | 衍生物脚本（官方 832 + GBF 5） |
 | `res/editions/` | 系列定义（含 `Granblue Fantasy.txt`） |
-| `res/lists/TypeLists.txt` | 注册了本系列自定义种族（Draph / Erune / Harvin / Primal / Basara）的类型表 |
+| `res/lists/TypeLists.txt` | 注册了本系列自定义种族（Draph / Erune / Harvin / Primal等）的类型表 |
 | `res/blockdata/` | 轮抓/环境接入（已注册 `Granblue Fantasy` 系列） |
 | `res/pics/cards/GBF/` | GBF 卡图（Forge 不会自动下载自定义集卡图，随仓库分发） |
 | `forge-src/` | **魔改后的 Forge 引擎完整源码**（基于官方 tag `forge-2.0.13`，编译产物不入库） |
@@ -144,4 +144,5 @@ tools\run_all_tests.cmd
 
 - [Card-Forge / forge](https://github.com/Card-Forge/forge) —— 上游开源万智牌引擎（GPL-3.0）
 - 卡牌设计灵感来自《碧蓝幻想》（Granblue Fantasy）系列
-- 我有智力障碍，所有脚本均由deepseek编写，这蓝色大肥鱼经常白吃我token不好好修bug。
+- 卡图由MSE制作，卡面来自GBF本家，少部分背景图（如十二神将）经过AI重绘扩大分辨率
+- 我有智力障碍，所有脚本均由deepseek编写，这蓝色大肥鱼经常白吃我token不好好修bug
