@@ -1,0 +1,7 @@
+Name:Sunflower Token
+ManaCost:no cost
+Colors:white
+Types:Creature Plant Elemental
+PT:2/2
+K:Lifelink
+Oracle:Lifelink

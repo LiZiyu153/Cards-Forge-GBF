@@ -1,0 +1,7 @@
+Name:Dragon Token
+ManaCost:no cost
+Colors:green
+Types:Artifact Creature Dragon
+PT:2/1
+K:Flying
+Oracle:Flying

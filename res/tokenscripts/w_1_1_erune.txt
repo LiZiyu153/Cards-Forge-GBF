@@ -1,0 +1,6 @@
+Name:Erune Token
+ManaCost:no cost
+Colors:white
+Types:Creature Erune
+PT:1/1
+Oracle:

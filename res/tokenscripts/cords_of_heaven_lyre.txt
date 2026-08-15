@@ -1,0 +1,13 @@
+Name:Cords of Heaven Lyre Token
+ManaCost:no cost
+Types:Artifact
+T:Mode$ Phase | Phase$ End of Turn | ValidPlayer$ You | TriggerZones$ Battlefield | Execute$ TrigLifeCheck | TriggerDescription$ At the beginning of your end step, if your life total is less than or equal to your starting life total, you gain 1 life. Otherwise, draw a card. You may pay {2} to do both.
+SVar:TrigLifeCheck:DB$ Branch | BranchConditionSVar$ LifeLEStart | BranchConditionSVarCompare$ GE1 | TrueSubAbility$ DBGainLife | FalseSubAbility$ DBDraw
+SVar:LifeLEStart:Count$Compare Y LEZ.1.0
+SVar:Y:PlayerCountPropertyYou$LifeTotal
+SVar:Z:PlayerCountPropertyYou$StartingLifeTotal
+SVar:DBGainLife:DB$ GainLife | Defined$ You | LifeAmount$ 1 | SubAbility$ DBGainBonus
+SVar:DBGainBonus:DB$ Draw | UnlessCost$ 2 | UnlessPayer$ You | UnlessSwitched$ True
+SVar:DBDraw:DB$ Draw | SubAbility$ DBDrawBonus
+SVar:DBDrawBonus:DB$ GainLife | Defined$ You | LifeAmount$ 1 | UnlessCost$ 2 | UnlessPayer$ You | UnlessSwitched$ True
+Oracle:At the beginning of your end step, if your life total is less than or equal to your starting life total, you gain 1 life. Otherwise, draw a card. You may pay {2} to do both.

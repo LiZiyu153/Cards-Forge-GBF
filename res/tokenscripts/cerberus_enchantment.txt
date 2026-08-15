@@ -1,0 +1,5 @@
+Name:Cerberus Token
+ManaCost:no cost
+Types:Enchantment
+A:AB$ Animate | Cost$ T | ValidTgts$ Land.YouCtrl | TargetMin$ 2 | TargetMax$ 2 | Power$ 1 | Toughness$ 1 | Types$ Primal,Dog,Creature,Land | Colors$ Black | Duration$ Permanent | SpellDescription$ Two target lands you control become 1/1 black Primal Dog creature tokens. They're still lands.
+Oracle:{T}: Two target lands you control become 1/1 black Primal Dog creature tokens. They're still lands.

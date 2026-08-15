@@ -1,0 +1,6 @@
+Name:Spirit Blossom Token
+ManaCost:no cost
+Colors:green
+Types:Enchantment Creature Plant Elemental
+PT:1/1
+Oracle:

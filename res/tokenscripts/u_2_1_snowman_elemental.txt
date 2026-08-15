@@ -1,0 +1,6 @@
+Name:Snowman Token
+ManaCost:no cost
+Colors:blue
+Types:Creature Elemental
+PT:2/1
+Oracle:

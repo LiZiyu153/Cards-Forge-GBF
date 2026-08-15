@@ -1,0 +1,7 @@
+Name:Ideal Vassals Token
+ManaCost:no cost
+Colors:red
+Types:Creature Human
+PT:2/2
+K:Vigilance
+Oracle:Vigilance

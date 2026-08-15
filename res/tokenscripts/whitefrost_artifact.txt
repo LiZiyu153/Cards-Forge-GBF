@@ -1,0 +1,4 @@
+Name:Whitefrost
+ManaCost:no cost
+Types:Artifact
+Oracle:
