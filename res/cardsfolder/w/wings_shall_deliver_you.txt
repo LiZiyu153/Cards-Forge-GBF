@@ -2,7 +2,7 @@ Name:Wings Shall Deliver You
 ManaCost:4 U U
 Types:Enchantment Saga
 K:Chapter:4:DBI,DBII,DBIII,DBIV
-SVar:DBI:DB$ ChangeZone | ValidTgts$ Instant.YourGraveyard,Sorcery.YourGraveyard | Origin$ Graveyard | Destination$ Hand | SpellDescription$ I — Return target instant or sorcery card from your graveyard to your hand.
+SVar:DBI:DB$ ChangeZone | ValidTgts$ Instant.YouOwn,Sorcery.YouOwn | Origin$ Graveyard | Destination$ Hand | SpellDescription$ I — Return target instant or sorcery card from your graveyard to your hand.
 SVar:DBII:DB$ Scry | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ II — Scry 2, then draw a card.
 SVar:DBDraw:DB$ Draw
 SVar:DBIII:DB$ Effect | StaticAbilities$ Uncounterable | SpellDescription$ III — Noncreature spells you cast can't be countered.

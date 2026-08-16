@@ -31,6 +31,7 @@ tools\run_all_tests.cmd -Card "Vikala,Guardian of the North"   :: 只解析指�
 | `GbfBigBerthaTest` | 行为 | Big Bertha 条件减费（`CheckSVar$ X GE6` + 对手总防御力 `Count$Valid$CardToughness`）经真实 `CostAdjustment.adjust` 路径断言调整后 CMC |
 | `GbfEugenTest` | 行为 | Eugen：TrigBeginCombat 链（打目标生物 1/无目标改打对方牌手 1）+ 真实 Phase 触发路径（`Phase$ BeginCombat | ValidPlayer$ Player` 双方回合战斗阶段都触发，含 `resetActiveTriggers`/`unfreezeStack` 模拟 onPhaseBegin） |
 | `GbfPerpetualTailwindTest` | 行为 | Perpetual Tailwind CDA P/T 回归：`Count$ValidGraveyard,Battlefield Enchantment.YouCtrl` 多区域计数（己方坟场结界 + 己方操控结界；对手坟场/对手操控不计）+ `checkStaticAbilities()` 后断言 P/T |
+| `GbfWingsTest` | 行为 | Wings Shall Deliver You 第 I 章目标限制回归：`Instant.YouOwn,Sorcery.YouOwn`（+ `Origin$ Graveyard`）只选己方坟场 instant/sorcery，对手坟场排除；旧写法 `YourGraveyard` 匹配不到任何牌（静默失效证明） |
 | `GbfTestBase` | 基类 | 公共样板：FModel 初始化、dev 双人局、makeCard/addToBattlefield/enterBattlefield、playUntilStackClear |
 
 ## 新增测试的步骤
