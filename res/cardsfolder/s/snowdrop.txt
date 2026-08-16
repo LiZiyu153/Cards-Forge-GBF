@@ -1,6 +1,6 @@
 Name:Snowdrop
 ManaCost:U
 Types:Enchantment
-T:Mode$ Taps | ValidCard$ Creature | TriggerZones$ Battlefield | Execute$ TrigScry | TriggerDescription$ Whenever a creature becomes tapped, scry 1.
+T:Mode$ Taps | ValidCard$ Creature.YouCtrl | TriggerZones$ Battlefield | Execute$ TrigScry | TriggerDescription$ Whenever a creature you control becomes tapped, scry 1.
 SVar:TrigScry:DB$ Scry | ScryNum$ 1
-Oracle:Whenever a creature becomes tapped, scry 1.
+Oracle:Whenever a creature you control becomes tapped, scry 1.

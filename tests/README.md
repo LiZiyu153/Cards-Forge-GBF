@@ -28,6 +28,8 @@ tools\run_all_tests.cmd -Card "Vikala,Guardian of the North"   :: 只解析指�
 | `GbfAndiraTest` | 行为 | Andira Prepare 已备法 + 手牌传奇忍术授予 + Baboon Blast 免费施放链 |
 | `GbfVajraTest` | 行为 | Vajra//Basara：ETB 衍生物、Dog 指示物链、战斗转化触发、鹏洛客背面结构、+2/+1/0 能力 |
 | `GbfVikalaTest` | 行为 | Vikala：ETB Rat 数量、`+Other` 排除自身、牺牲触发、死亡链磨牌选项、XHalf=ceil(X/2) |
+| `GbfBigBerthaTest` | 行为 | Big Bertha 条件减费（`CheckSVar$ X GE6` + 对手总防御力 `Count$Valid$CardToughness`）经真实 `CostAdjustment.adjust` 路径断言调整后 CMC |
+| `GbfEugenTest` | 行为 | Eugen：TrigBeginCombat 链（打目标生物 1/无目标改打对方牌手 1）+ 真实 Phase 触发路径（`Phase$ BeginCombat | ValidPlayer$ Player` 双方回合战斗阶段都触发，含 `resetActiveTriggers`/`unfreezeStack` 模拟 onPhaseBegin） |
 | `GbfTestBase` | 基类 | 公共样板：FModel 初始化、dev 双人局、makeCard/addToBattlefield/enterBattlefield、playUntilStackClear |
 
 ## 新增测试的步骤

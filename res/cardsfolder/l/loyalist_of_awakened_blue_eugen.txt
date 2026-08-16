@@ -1,11 +1,11 @@
 Name:Loyalist of Awakened Blue,Eugen
 ManaCost:1 R R
 Types:Legendary Creature Human
-PT:2/1
+PT:2/2
 K:Flash
-T:Mode$ Attacks | ValidCard$ Creature.YouCtrl | TriggerZones$ Battlefield | Execute$ TrigDealBeforeCombat | TriggerDescription$ Before combat damage is dealt, for each attacking creature you control, CARDNAME deals 1 damage to target creature an opponent controls. If no valid target exists, it deals 1 damage to the defending player instead.
-SVar:TrigDealBeforeCombat:DB$ Branch | BranchConditionSVar$ HasCreature | BranchConditionSVarCompare$ GE1 | ValidTgts$ Creature.OppCtrl | TgtPrompt$ Select target creature an opponent controls | TargetMin$ 0 | TargetMax$ 1 | TrueSubAbility$ DBDamageCreature | FalseSubAbility$ DBDamagePlayer | SpellDescription$ CARDNAME deals 1 damage to target creature an opponent controls. If no valid target exists, it deals 1 damage to the defending player instead.
+T:Mode$ Phase | Phase$ BeginCombat | ValidPlayer$ Player | TriggerZones$ Battlefield | Execute$ TrigBeginCombat | TriggerDescription$ At the beginning of the combat phase of each turn, CARDNAME deals 1 damage to target creature an opponent controls. If no valid target exists, it deals 1 damage to the opponent player instead.
+SVar:TrigBeginCombat:DB$ Branch | BranchConditionSVar$ HasCreature | BranchConditionSVarCompare$ GE1 | ValidTgts$ Creature.OppCtrl | TgtPrompt$ Select target creature an opponent controls | TargetMin$ 0 | TargetMax$ 1 | TrueSubAbility$ DBDamageCreature | FalseSubAbility$ DBDamagePlayer | SpellDescription$ CARDNAME deals 1 damage to target creature an opponent controls. If no valid target exists, it deals 1 damage to the opponent player instead.
 SVar:HasCreature:Count$Valid Creature.OppCtrl
 SVar:DBDamageCreature:DB$ DealDamage | Defined$ Targeted | NumDmg$ 1
 SVar:DBDamagePlayer:DB$ DealDamage | Defined$ Opponent | NumDmg$ 1
-Oracle:Flash\nBefore combat damage is dealt, for each attacking creature you control, Eugen deals 1 damage to target creature an opponent controls. If no valid target exists, it deals 2 damage to the defending player instead.
+Oracle:Flash\nAt the beginning of the combat phase of each turn, Eugen deals 1 damage to target creature an opponent controls. If no valid target exists, it deals 1 damage to the opponent player instead.

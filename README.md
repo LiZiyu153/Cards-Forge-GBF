@@ -16,9 +16,9 @@
 ### 目前的内容
 
 1. 第一轮设计：添加了Mythic Rare‌牌7张、Rare牌20张、Uncommon牌36张、Common牌60张共计123张卡牌。
-2. 十二神将补充包：添加了Mythic Rare1张、Rare牌13张共计14张卡牌。
+2. 十二神将补充包：添加了Mythic Rare1张、Rare牌12张共计14张卡牌。
 
-当前系列注册卡牌 **136 张**（Mythic 8 / Rare 33 / Uncommon 36 / Common 59），另有 5 个 GBF 衍生物脚本。
+当前系列注册卡牌 **136 张**（Mythic 8 / Rare 32 / Uncommon 36 / Common 60），另有 5 个 GBF 衍生物脚本。
 
 ### 计划更新
 
