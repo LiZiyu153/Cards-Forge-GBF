@@ -9,7 +9,8 @@
       2) 权威解析测试 GbfParseTest（全部 GBF 卡，cardId>=0）
       3) 衍生物解析测试 GbfTokenParseTest（[tokens] 段 5 个脚本）
       4) 全部行为测试（GbfBehaviorTest / GbfArrietTest / GbfLeJardinTest /
-         GbfAnilaTest / GbfAndiraTest / GbfVajraTest / GbfVikalaTest）
+         GbfAnilaTest / GbfAndiraTest / GbfVajraTest / GbfVikalaTest /
+         GbfBigBerthaTest / GbfEugenTest / GbfPerpetualTailwindTest）
       5) 静态验证（python D:/forge-analysis/verify_gbf_scripts.py，可跳过）
 
     内部自动固定：CWD=安装目录（Localizer 依赖）、fat jar classpath、
@@ -189,7 +190,8 @@ $behaviorTests = @(
     'GbfVajraTest',
     'GbfVikalaTest',
     'GbfBigBerthaTest',
-    'GbfEugenTest'
+    'GbfEugenTest',
+    'GbfPerpetualTailwindTest'
 )
 if ($Quick) {
     Write-Host "---- [4/6] 行为测试 (跳过, -Quick) ----"
