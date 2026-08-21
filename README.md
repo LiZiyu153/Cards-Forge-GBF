@@ -18,7 +18,7 @@
 1. 第一轮设计：添加了Mythic Rare‌牌7张、Rare牌20张、Uncommon牌36张、Common牌60张共计123张卡牌。
 2. 十二神将补充包：添加了Mythic Rare1张、Rare牌12张共计14张卡牌。
 
-当前系列注册卡牌 **136 张**（Mythic 8 / Rare 32 / Uncommon 36 / Common 60），另有 5 个 GBF 衍生物脚本。
+当前系列注册卡牌 **136 张**（Mythic 8 / Rare 32 / Uncommon 36 / Common 60），另有 6 个 GBF 衍生物脚本。
 
 ### 计划更新
 
@@ -35,7 +35,7 @@
 |---|---|
 | `res/cardsfolder/<letter>/` | 卡牌脚本（每卡一个 `.txt`，按卡名首字母分目录） |
 | `res/cardsfolder/cardsfolder.zip` | Forge 官方卡牌脚本（随仓库分发，保证完整可玩） |
-| `res/tokenscripts/` | 衍生物脚本（官方 832 + GBF 5） |
+| `res/tokenscripts/` | 衍生物脚本（官方 832 + GBF 6） |
 | `res/editions/` | 系列定义（含 `Granblue Fantasy.txt`） |
 | `res/lists/TypeLists.txt` | 注册了本系列自定义种族（Draph / Erune / Harvin / Primal等）的类型表 |
 | `res/blockdata/` | 轮抓/环境接入（已注册 `Granblue Fantasy` 系列） |

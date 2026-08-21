@@ -152,3 +152,4 @@ BoosterBox=36
 3 b_1_2_dog_ally_lifelink
 4 rg_2_1_boar
 5 b_0_1_rat
+6 cerberus_enchantment

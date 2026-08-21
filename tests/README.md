@@ -19,8 +19,8 @@ tools\run_all_tests.cmd -Card "Vikala,Guardian of the North"   :: 只解析指�
 
 | 类 | 类型 | 覆盖 |
 |---|---|---|
-| `GbfParseTest` | 解析 | 全部 129 张 GBF 卡 `CardFactory.getCard(pc, null, 1, null)`（cardId≥0，权威路径；未知 ApiType/TriggerType/静态模式在此抛异常） |
-| `GbfTokenParseTest` | 解析 | 5 个 GBF 衍生物脚本经 `TokenDb.getToken(name,"GBF")` → `CardFactory.getCard`（与真实对局造衍生物同路径；GbfParseTest 覆盖不到 tokenscripts） |
+| `GbfParseTest` | 解析 | 全部 136 张 GBF 卡 `CardFactory.getCard(pc, null, 1, null)`（cardId≥0，权威路径；未知 ApiType/TriggerType/静态模式在此抛异常） |
+| `GbfTokenParseTest` | 解析 | 6 个 GBF 衍生物脚本经 `TokenDb.getToken(name,"GBF")` → `CardFactory.getCard`（与真实对局造衍生物同路径；GbfParseTest 覆盖不到 tokenscripts） |
 | `GbfBehaviorTest` | 行为 | Anthuria 遗言链 + ETB 指示物数学（Greatest/LeastCardManaCost） |
 | `GbfArrietTest` | 行为 | Arriet 模式2「+1/+0 与 +0/+1 分给两个不同生物」（Choices$ 方案回归） |
 | `GbfLeJardinTest` | 行为 | Le Jardin de Fleurs `ResolvedLimit$ 2` 每回合上限 + 跨回合重置 |
@@ -32,6 +32,8 @@ tools\run_all_tests.cmd -Card "Vikala,Guardian of the North"   :: 只解析指�
 | `GbfEugenTest` | 行为 | Eugen：TrigBeginCombat 链（打目标生物 1/无目标改打对方牌手 1）+ 真实 Phase 触发路径（`Phase$ BeginCombat | ValidPlayer$ Player` 双方回合战斗阶段都触发，含 `resetActiveTriggers`/`unfreezeStack` 模拟 onPhaseBegin） |
 | `GbfPerpetualTailwindTest` | 行为 | Perpetual Tailwind CDA P/T 回归：`Count$ValidGraveyard,Battlefield Enchantment.YouCtrl` 多区域计数（己方坟场结界 + 己方操控结界；对手坟场/对手操控不计）+ `checkStaticAbilities()` 后断言 P/T |
 | `GbfWingsTest` | 行为 | Wings Shall Deliver You 第 I 章目标限制回归：`Instant.YouOwn,Sorcery.YouOwn`（+ `Origin$ Graveyard`）只选己方坟场 instant/sorcery，对手坟场排除；旧写法 `YourGraveyard` 匹配不到任何牌（静默失效证明） |
+| `GbfFlameArtsTest` | 行为 | Flame Arts X 伤害回归（R38）：去 `DividedAsYouChoose$` 后 X=3 时双/单目标各受 3（原实现选满 X 目标时每目标恰好 1 点） |
+| `GbfCerberusTest` | 行为 | Hadean Watchdog,Cerberus 搜索链回归（R38）：搜索到的地变 1/1 黑 Primal Dog（仍为地）；被牺牲的生物不再被 `Defined$ Remembered` 误变形（`ForgetOtherRemembered$ True`） |
 | `GbfTestBase` | 基类 | 公共样板：FModel 初始化、dev 双人局、makeCard/addToBattlefield/enterBattlefield、playUntilStackClear |
 
 ## 新增测试的步骤
