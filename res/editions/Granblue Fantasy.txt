@@ -8,30 +8,30 @@ BoosterBox=36
 
 [cards]
 #格式：收藏编号 稀有度（L基本地、C普通、U非普通、R稀有、M秘稀、S特殊） 卡名
-1 R Green Gunsmith, Cucouroux
+1 R Cucouroux,Green Gunsmith
 2 U Akua Lanakila
 3 U All Sensation
 4 C Arcane Swordswoman of Flame
 5 C Ars Magna
-6 R Awakened Dragoness,Grea
-7 R Azure Mercenary,Drang
+6 R Grea,Awakened Dragoness
+7 R Drang,Azure Mercenary
 8 C Beastly Iron Ball
 9 U Bedrock Rain
 10 C Beguiling Indigo
-11 R Bewitching Rose of the Blue Sky,Rosetta
+11 R Rosetta,Bewitching Rose of the Blue Sky
 12 C Big Bertha
 13 C Bitter Swordsman
 14 C Blazing Undertaker
 15 U Bloodline of a Ruined Kingdom
-16 M Blue-Green Magical Girl,Io
+16 M Io,Blue-Green Magical Girl
 17 U Burying Bullet
 18 U Celeste Claw Omega
 19 C Cielo della Grazia
 20 C Count of Integrity
 21 C Crosscut
 22 U Crystalia Conductor
-23 R Crystalian Mission,Lily
-24 R Dancer of the Sun,Anthuria
+23 R Lily,Crystalian Mission
+24 R Anthuria,Dancer of the Sun
 25 U Death March
 26 C Die Drachenkanone
 27 C Diligent Holy Knight
@@ -50,43 +50,43 @@ BoosterBox=36
 40 C Flame Arts
 41 C Flare
 42 C Fleur Tourbillon
-43 U Fluttering Swordswoman,Narmaya
+43 U Narmaya,Fluttering Swordswoman
 44 C Foolish
 45 C Forest Ranger
-46 U Founder Alchemist,Cagliostro
+46 U Cagliostro,Founder Alchemist
 47 U Girl Fallen from the Sky
 48 C Goblin Killer
-49 U Good Man Seeking Vengeance,Sevilbarra
+49 U Sevilbarra,Good Man Seeking Vengeance
 50 C Grand Guignol
 51 U Growing Under the Sun
-52 U Guardian Knight of the Blue Sky,Katalina
-53 R Guardian of the Wind,Tiamat
+52 U Katalina,Guardian Knight of the Blue Sky
+53 R Tiamat,Guardian of the Wind
 54 U Guiding Firearm
-55 M Hadean Watchdog,Cerberus
+55 M Cerberus,Hadean Watchdog
 56 C Heaven-Sent Child of the Wind and Waves
 57 C Heavens on Misery
-58 R Holy Maiden,Jeanne d'Arc
+58 R Jeanne d'Arc,Holy Maiden
 59 C Imminent Shadow
 60 C It's Springtime!
 61 R Judgment of Thunder
 62 C Kingly Aura
 63 U Le Jardin de Fleurs
 64 U Leviathan Gaze Omega
-65 R Love-crazed Flower Armor,Vira
-66 R Loyalist of Awakened Blue,Eugen
+65 R Vira,Love-crazed Flower Armor
+66 R Eugen,Loyalist of Awakened Blue
 67 R Luminox Genesi
 68 U Maid Aflame
 69 U Maid of Iron Fists
 70 C Moon Between the Clouds
-71 U Natural-Born Archer,Metera
-72 U Navigator of the Blue Skies,Rackam
+71 U Metera,Natural-Born Archer
+72 U Rackam,Navigator of the Blue Skies
 73 C Nightmare Wish
 74 C O Katalina
-75 M Oracle Prodigy,Arulumaya
+75 M Arulumaya,Oracle Prodigy
 76 U Perpetual Tailwind
 77 C Pilgrim on a Short Break
 78 U Priestess of the Sun
-79 U Princess of Seven Gems,De La Fille
+79 U De La Fille,Princess of Seven Gems
 80 C Private Chiller
 81 U Psycho's Path
 82 C Pursuer of Myth
@@ -94,13 +94,13 @@ BoosterBox=36
 84 C Returnee from the Moon
 85 U Sacred Arc
 86 C Sacred Archer
-87 R Sage of the Sword,Aletheia
+87 R Aletheia,Sage of the Sword
 88 C Sand Wall
 89 C Serene Sinker
 90 C Shrewd Shooter
 91 U Skydrover
 92 C Snowdrop
-93 R Soothing Minstrel,Arriet
+93 R Arriet,Soothing Minstrel
 94 C Southern Cross
 95 C Space Out
 96 C Spear of Arvess
@@ -109,23 +109,23 @@ BoosterBox=36
 99 C Sunrise Blade
 100 C Sword Song Dancer
 101 C Talismancer of Vengence
-102 R The Immortal Ultramarine,Beatrix
-103 M The Mad Cyclon,Grimnir
-104 U Thousand-Year Seeker,Yuel
-105 R Thunderswift Lord,Albert
-106 U Thunderwolf of Shattered Ground,Eustace
+102 R Beatrix,The Immortal Ultramarine
+103 M Grimnir,The Mad Cyclon
+104 U Yuel,Thousand-Year Seeker
+105 R Albert,Thunderswift Lord
+106 U Eustace,Thunderwolf of Shattered Ground
 107 U Tiamat Bolt Omega
 108 M Ultima Dagger
-109 M Unchanging Protector and Punisher,Shiva
+109 M Shiva,Unchanging Protector and Punisher
 110 C Unforgettable Summer
 111 C Untergang Rune
-112 R Vampire Princess,Vania
+112 R Vania,Vampire Princess
 113 C Veteran of Crushing Fists
 114 C Violet Shadow Assassin
 115 U War Mecha
 116 C Warrior of Virtue
 117 C White Lightning
-118 M Whitefrost Dragon Maiden,Filene
+118 M Filene,Whitefrost Dragon Maiden
 119 C Wind's Solace
 120 R Wings Shall Deliver You
 121 R Chromatic Paintbrush

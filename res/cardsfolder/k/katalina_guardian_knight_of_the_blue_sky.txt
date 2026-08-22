@@ -1,4 +1,4 @@
-Name:Guardian Knight of the Blue Sky,Katalina
+Name:Katalina,Guardian Knight of the Blue Sky
 ManaCost:W U
 Types:Legendary Creature Human Knight
 PT:1/2

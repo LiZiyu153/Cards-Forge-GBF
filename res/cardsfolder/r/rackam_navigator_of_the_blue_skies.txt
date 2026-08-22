@@ -1,4 +1,4 @@
-Name:Navigator of the Blue Skies,Rackam
+Name:Rackam,Navigator of the Blue Skies
 ManaCost:G
 Types:Legendary Creature Human
 PT:0/1

@@ -1,4 +1,4 @@
-Name:Love-crazed Flower Armor,Vira
+Name:Vira,Love-crazed Flower Armor
 ManaCost:4 B B
 Types:Legendary Creature Human Berserker
 PT:3/3

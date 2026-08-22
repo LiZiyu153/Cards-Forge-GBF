@@ -1,4 +1,4 @@
-Name:Oracle Prodigy,Arulumaya
+Name:Arulumaya,Oracle Prodigy
 ManaCost:1 W R
 Types:Legendary Creature Harvin
 PT:3/3

@@ -1,4 +1,4 @@
-Name:The Mad Cyclon,Grimnir
+Name:Grimnir,The Mad Cyclon
 ManaCost:5 G G G
 Types:Legendary Creature Primal
 PT:3/5

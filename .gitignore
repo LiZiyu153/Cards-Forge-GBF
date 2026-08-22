@@ -54,6 +54,8 @@ res/*
 !res/lists/
 !res/blockdata/
 !res/pics/
+!res/gbf-pics/
+!res/gbf-pics/**
 
 # cardsfolder：GBF 136 卡 + 官方脚本 zip 全量入库
 res/cardsfolder/*.zip

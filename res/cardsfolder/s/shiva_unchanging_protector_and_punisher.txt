@@ -1,4 +1,4 @@
-Name:Unchanging Protector and Punisher,Shiva
+Name:Shiva,Unchanging Protector and Punisher
 ManaCost:1 R R
 Types:Legendary Creature Primal
 PT:3/3

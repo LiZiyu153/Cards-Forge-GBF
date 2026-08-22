@@ -1,4 +1,4 @@
-Name:Dancer of the Sun,Anthuria
+Name:Anthuria,Dancer of the Sun
 ManaCost:W U G
 Types:Legendary Creature Erune
 PT:1/1

@@ -1,4 +1,4 @@
-Name:Blue-Green Magical Girl,Io
+Name:Io,Blue-Green Magical Girl
 ManaCost:4 W/U/B/R/G
 Types:Legendary Creature Human Wizard
 PT:1/1

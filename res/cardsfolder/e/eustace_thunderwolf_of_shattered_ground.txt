@@ -1,4 +1,4 @@
-Name:Thunderwolf of Shattered Ground,Eustace
+Name:Eustace,Thunderwolf of Shattered Ground
 ManaCost:3 B
 Types:Legendary Creature Erune
 PT:2/3

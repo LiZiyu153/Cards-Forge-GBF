@@ -1,4 +1,4 @@
-Name:Natural-Born Archer,Metera
+Name:Metera,Natural-Born Archer
 ManaCost:R R
 Types:Legendary Creature Erune Archer
 PT:2/2

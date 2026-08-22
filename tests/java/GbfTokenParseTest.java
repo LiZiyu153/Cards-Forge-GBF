@@ -28,7 +28,7 @@ public class GbfTokenParseTest extends GbfTestBase {
         "b_1_2_dog_ally_lifelink",                  // Vajra (GBF #127)
         "rg_2_1_boar",                              // Kumbhira (GBF #128)
         "b_0_1_rat",                                // Vikala (GBF #129)
-        "cerberus_enchantment",                     // Hadean Watchdog,Cerberus (GBF #55)
+        "cerberus_enchantment",                     // Cerberus,Hadean Watchdog (GBF #55)
     };
 
     public static void main(String[] args) {

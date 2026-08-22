@@ -1,4 +1,4 @@
-Name:Hadean Watchdog,Cerberus
+Name:Cerberus,Hadean Watchdog
 ManaCost:2 B G G
 Types:Legendary Creature Primal Demon
 PT:3/2
